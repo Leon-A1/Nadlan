@@ -1,0 +1,150 @@
+/* Mobile */
+.navbar button {
+  border: none;
+  display: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+#hamburger-button-id {
+  position: fixed;
+  top: 37px;
+  left: 35px;
+  z-index: 15;
+  filter: drop-shadow(1px 1px 1px #222222);
+}
+.side-nav {
+  height: 100%;
+  text-align: center;
+  width: 0;
+  position: fixed;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  background-color: var(--White);
+  overflow-x: hidden;
+  padding-top: 150px;
+  transition: width 700ms;
+  font-size: 110%;
+  font-family: Arial;
+  overflow-y: hidden;
+  filter: drop-shadow(1px 1px 10px #222222);
+}
+
+.side-nav a {
+  padding: 10px;
+  text-decoration: none;
+}
+.side-nav li {
+  text-decoration: none;
+  padding: 20px;
+}
+
+.side-nav li a {
+  color: var(--Black);
+  font-size: larger;
+  font-weight: 400;
+  transition: 1600ms;
+  text-decoration: none;
+}
+.side-nav a:hover {
+  color: var(--Red);
+  transition: 600ms;
+}
+#profile-small-nav-item {
+  opacity: 0;
+}
+#contact-small-nav-item {
+  opacity: 0;
+}
+#home-small-nav-item {
+  opacity: 0;
+}
+.side-nav button {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  color: var(--Grey);
+  display: block;
+  transition: 0.3s;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.side-nav .btn-close {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+/* Desktop */
+#top-menu {
+  font-family: Assistant, sans-serif;
+  font-weight: 100;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: var(--White);
+  z-index: 10;
+  height: 100px;
+  filter: drop-shadow(1px 1px 10px #222222);
+}
+#top-menu a {
+  text-decoration: none;
+  color: #8a8a8a;
+  transition: 600ms;
+  padding: 15px;
+  cursor: pointer;
+}
+#top-menu a:hover {
+  color: var(--Red);
+  transition: 600ms;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .navbar button {
+    display: block;
+  }
+  #top-menu a {
+    display: none;
+  }
+  #smaller-display-side-navbar-items {
+    display: block;
+    font-size: 90%;
+    transition: 500ms;
+  }
+  #top-menu a {
+    display: none;
+    opacity: 0;
+  }
+  .navbar img {
+    width: 75px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    filter: drop-shadow(1px 1px 1px #222222);
+  }
+}
+
+@media (min-width: 900px) {
+  #top-menu {
+    height: 100px;
+  }
+
+  .navbar img {
+    height: 80px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    filter: drop-shadow(1px 1px 1px #222222);
+  }
+}

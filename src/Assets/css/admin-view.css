@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  display: block;
+  margin: auto;
+  max-width: 500px;
+  font-size: 1.5rem;
+  padding-top: 50px;
+}
+form input {
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 5px;
+  padding: 10px;
+}
+button {
+  font-size: 1.5rem;
+}
+.uploaded-image-container img {
+  max-width: 450px;
+  display: block;
+  margin: auto;
+}

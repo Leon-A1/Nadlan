@@ -1,12 +1,21 @@
-import "./App.css";
+import "./Assets/css/App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import AdminView from "./Views/AdminView";
+import AdminCreateView from "./Views/AdminCreateView";
+import LandingPageView from "./Views/LandingPageView";
+import ProductDetails from "./Views/ProductDetails";
 
 function App() {
+  // let productId = "";
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>NADLAN</h1>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={LandingPageView}></Route>
+      <Route exact path="/admin" component={AdminView}></Route>
+      <Route path="/admin/create-product" component={AdminCreateView}></Route>
+      <Route path="/admin/product/:productid">
+        <ProductDetails />
+      </Route>
+    </Router>
   );
 }
 
