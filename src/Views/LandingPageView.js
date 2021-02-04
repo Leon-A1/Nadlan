@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "../Components/NavBar";
+import Navbar from "../Components/NavBar/NavBar";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Search from "../Components/Search";
-import ProductGrid from "../Components/ProductGrid";
+import Search from "../Components/Search/Search";
+import ProductGrid from "../Components/ProductGrid/ProductGrid";
+import PageHeader from "../Components/PageHeader/PageHeader";
 
 export default function LandingPageView() {
   const [items, setItems] = useState([]);
@@ -12,9 +13,7 @@ export default function LandingPageView() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(
-        `https://www.breakingbadapi.com/api/characters?name=${query}`
-      );
+      const result = await axios(`http://localhost:5000/api/products${query}`);
       setItems(result.data);
       setIsLoading(false);
     };
@@ -24,7 +23,8 @@ export default function LandingPageView() {
   return (
     <div className="App">
       <Navbar />
-      <Search getQuery={(q) => setQuery(q)} />
+      <PageHeader />
+      <Search getQuery={(q) => setQuery("/" + q)} />
       <ProductGrid isLoading={isLoading} items={items} />
     </div>
   );

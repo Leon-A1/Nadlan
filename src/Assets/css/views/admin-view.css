@@ -1,0 +1,34 @@
+.uploaded-image-container img {
+  max-width: 450px;
+  display: block;
+  margin: auto;
+}
+.create-product-form {
+  /* background-color: blue; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  display: block;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  max-width: 500px;
+  font-size: 1.5rem;
+  padding-top: 50px;
+  text-align: right;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.create-product-form input {
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+.create-product-form button {
+  font-size: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+}

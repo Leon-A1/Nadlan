@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./search.css";
 
 const Search = ({ getQuery }) => {
   const [text, setText] = useState("");
@@ -14,10 +15,11 @@ const Search = ({ getQuery }) => {
         <input
           type="text"
           className="form-control"
-          placeholder="Search Products"
+          placeholder="חיפוש נכסים"
           value={text}
           onChange={(e) => onChange(e.target.value)}
           autoFocus
+          style={{ textAlign: "right" }}
         />
       </form>
     </section>

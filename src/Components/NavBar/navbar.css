@@ -8,7 +8,7 @@
 }
 #hamburger-button-id {
   position: fixed;
-  top: 37px;
+  top: 3vh;
   left: 35px;
   z-index: 15;
   filter: drop-shadow(1px 1px 1px #222222);
@@ -83,17 +83,19 @@
 /* Desktop */
 #top-menu {
   font-family: Assistant, sans-serif;
-  font-weight: 100;
+  font-size: 1.75rem;
   width: 100%;
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: var(--White);
+  /* background-color: var(--White); */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 10;
-  height: 100px;
-  filter: drop-shadow(1px 1px 10px #222222);
+  height: 10vh;
+  font-weight: 600;
+  /* filter: drop-shadow(1px 1px 10px #222222); */
 }
 #top-menu a {
   text-decoration: none;
@@ -101,11 +103,13 @@
   transition: 600ms;
   padding: 15px;
   cursor: pointer;
+  color: #8d021f;
 }
 #top-menu a:hover {
-  color: var(--Red);
+  /* color: rgba(red, red, red, 1); */
   transition: 600ms;
   text-decoration: none;
+  background-color: white;
 }
 
 @media (max-width: 900px) {
@@ -125,9 +129,9 @@
     opacity: 0;
   }
   .navbar img {
-    width: 75px;
+    width: 8vh;
     position: fixed;
-    top: 5px;
+    top: 1vh;
     right: 5px;
     z-index: 100;
     filter: drop-shadow(1px 1px 1px #222222);
@@ -136,13 +140,13 @@
 
 @media (min-width: 900px) {
   #top-menu {
-    height: 100px;
+    height: 10vh;
   }
 
   .navbar img {
-    height: 80px;
+    height: 8vh;
     position: fixed;
-    top: 10px;
+    top: 1vh;
     right: 10px;
     z-index: 100;
     filter: drop-shadow(1px 1px 1px #222222);

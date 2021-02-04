@@ -1,8 +1,8 @@
 import React from "react";
-import "../Assets/css/navbar.css";
-import "../Assets/css/App.css";
-import logo from "../Assets/img/logo.png";
-import "../Assets/css/aos.css";
+import "./navbar.css";
+import logo from "./logo.png";
+
+import "../../Assets/css/aos.css";
 
 export default function navbar() {
   function openSlideMenu() {
@@ -46,14 +46,14 @@ export default function navbar() {
         </span>
         <ul id="top-menu">
           <li>
-            <a to="/getintouch">צור קשר</a>
+            <a href="/">צור קשר</a>
           </li>
 
           <li>
-            <a to="/companyprofile">פרופיל חברה</a>
+            <a href="/">פרופיל חברה</a>
           </li>
           <li>
-            <a to="/" exact>
+            <a href="/" exact>
               עמוד הבית
             </a>
           </li>
@@ -62,15 +62,15 @@ export default function navbar() {
       <div id="side-menu" className="side-nav">
         <ul>
           <li id="home-small-nav-item">
-            <a to="/" exact>
+            <a href="/" exact>
               עמוד הבית
             </a>
           </li>
           <li id="profile-small-nav-item">
-            <a to="/companyprofile">פרופיל חברה</a>
+            <a href="/">פרופיל חברה</a>
           </li>
           <li id="contact-small-nav-item">
-            <a to="/getintouch">צור קשר</a>
+            <a href="/">צור קשר</a>
           </li>
         </ul>
 
