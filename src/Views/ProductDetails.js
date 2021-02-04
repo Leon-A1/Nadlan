@@ -25,7 +25,7 @@ export default function ProductDetails() {
         console.log(e);
       });
   }, []);
-
+  console.log(productInfo);
   return (
     <div>
       <h1>product details</h1>
