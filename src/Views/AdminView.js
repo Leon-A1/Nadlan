@@ -25,7 +25,7 @@ export default function AdminView() {
   }, [query]);
 
   return (
-    <div>
+    <div className="admin-view-container">
       <Sidebar />
       <div className="App">
         <Search getQuery={(q) => setQuery(q)} />

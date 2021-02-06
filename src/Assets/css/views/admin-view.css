@@ -32,3 +32,8 @@
   width: 100%;
   cursor: pointer;
 }
+@media (min-width: 800px) {
+  .admin-view-container {
+    margin-left: 300px;
+  }
+}

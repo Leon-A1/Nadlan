@@ -98,7 +98,7 @@ export default function AdminCreateView() {
   };
 
   return (
-    <div>
+    <div className="admin-view-container">
       <Sidebar />
 
       <form

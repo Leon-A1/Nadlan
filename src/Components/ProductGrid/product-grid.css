@@ -1,12 +1,14 @@
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
+  padding: 10px;
 }
 .card {
   cursor: pointer;
   background-color: var(--Light-Grey);
   height: auto;
+  max-height: 500px;
   border: 1px solid var(--Black);
   filter: drop-shadow(1px 1px 3px #222222);
   color: var(--Black);
@@ -48,11 +50,17 @@
   padding-bottom: 10px;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* }
 
 @media (max-width: 500px) {
   .cards {
@@ -64,3 +72,8 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+} */
