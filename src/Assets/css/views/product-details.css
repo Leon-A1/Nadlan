@@ -1,0 +1,8 @@
+.product-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-details-container h1 {
+  padding-top: 100px;
+}

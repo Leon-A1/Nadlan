@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "../Assets/css/views/product-details.css";
+import NavBar from "../Components/NavBar/NavBar";
 
 export default function ProductDetails() {
   let { productid } = useParams();
@@ -8,33 +10,42 @@ export default function ProductDetails() {
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productImage, setProductImage] = useState("");
+  console.log("BEFORE USE EFFECT:", productid);
 
-  useEffect(() => {
-    const productInfo = axios
-      .post("http://localhost:5000/api/get_product/", { productId: productid })
-      .then((response) => {
-        // console.log(response);
-        // console.log(response.data.name);
-        // console.log(response.data.description);
-        console.log(response.data);
-        setProductImage(response.data);
-        setProductName(response.data.name);
-        setProductDescription(response.data.description);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
-  console.log(productInfo);
+  const fetchItems = async () => {
+    const result = await axios(
+      // `https://www.breakingbadapi.com/api/characters?name=${query}`
+      `http://localhost:5000/api/get_product${productid}`
+    );
+    console.log(result.data);
+  };
+
+  // useEffect(() => {
+  //   var product_data = axios(
+  //     `http://localhost:5000/api/get_product/${productid}`
+  //   );
+  //   console.log(product_data);
+
+  //   return () => {
+  //     console.log(product_data);
+  //     setProductName(product_data.data["product_name"]);
+  //   };
+  // }, []);
+  // console.log(product_data);
+
   return (
     <div>
-      <h1>product details</h1>
+      <NavBar />
 
-      <h3>Product ID: {productid}</h3>
-      <h3>Product Name: {productName}</h3>
-      <h3>Product Description: {productDescription}</h3>
-      <img src={productImage}></img>
-      {/* {productImage} */}
+      <div className="product-details-container">
+        <h1>product details</h1>
+
+        <h3>Product ID: {productid}</h3>
+        <h3>Product Name: {productName}</h3>
+        <h3>Product Description: {productDescription}</h3>
+        <img src={productImage} alt=""></img>
+        {/* {productImage} */}
+      </div>
     </div>
   );
 }

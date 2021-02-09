@@ -3,28 +3,41 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   padding: 10px;
+  background-color: var(--Light-Grey);
+  height: 100vh;
 }
 .card {
   cursor: pointer;
-  background-color: var(--Light-Grey);
+  background-color: var(--White);
   height: auto;
   max-height: 500px;
   border: 1px solid var(--Black);
   filter: drop-shadow(1px 1px 3px #222222);
-  color: var(--Black);
 }
 
 .card > h1 {
-  font-size: 2rem;
-  padding: 15px;
+  font-size: 1.75rem;
+  padding: 1rem;
   color: var(--Red);
   text-align: center;
 }
 .card > .description {
   font-size: 1rem;
-  padding: 15px;
   color: var(--Black);
   text-align: center;
+  overflow: hidden;
+  padding: 10px;
+  height: 90px;
+}
+.card .go-to-details {
+  color: var(--Black);
+  text-align: center;
+  transition: 300ms;
+  font-size: 1rem;
+}
+.card .go-to-details:hover {
+  color: var(--Red);
+  transition: 600ms;
 }
 .card > .price {
   font-size: 1rem;

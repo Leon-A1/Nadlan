@@ -6,16 +6,23 @@ import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 export default function AdminCreateView() {
   const [file, setFile] = useState("");
   const [file2, setFile2] = useState("");
+  const [file3, setFile3] = useState("");
+  const [file4, setFile4] = useState("");
+  const [file5, setFile5] = useState("");
 
   const [message, setMessage] = useState("");
-  const [fileSourceLink, setFileSourceLink] = useState("");
-  const [fileSourceLink2, setFileSourceLink2] = useState("");
+  // const [fileSourceLink, setFileSourceLink] = useState("");
+  // const [fileSourceLink2, setFileSourceLink2] = useState("");
+  // const [fileSourceLink3, setFileSourceLink3] = useState("");
+  // const [fileSourceLink4, setFileSourceLink4] = useState("");
+  // const [fileSourceLink5, setFileSourceLink5] = useState("");
+
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productPrice, setProductPrice] = useState("");
   // const [productCategory, setProductCategory] = useState("");
 
-  const [newProductId, setNewProductId] = useState("");
+  // const [newProductId, setNewProductId] = useState("");
 
   const onChange = (e) => {
     let newProductUniqeName =
@@ -38,6 +45,39 @@ export default function AdminCreateView() {
     let blob = file.slice(0, file.size, "image/png");
     let newFile = new File([blob], newProductUniqeName, { type: "image/png" });
     setFile2(newFile);
+  };
+  const onChange3 = (e) => {
+    let newProductUniqeName =
+      e.target.files[0].name.split(".")[0] +
+      String(Date.now() + "." + e.target.files[0].name.split(".")[1]);
+
+    let imageNameConvertion = document.querySelector("#pimage3");
+    let file = imageNameConvertion.files[0];
+    let blob = file.slice(0, file.size, "image/png");
+    let newFile = new File([blob], newProductUniqeName, { type: "image/png" });
+    setFile3(newFile);
+  };
+  const onChange4 = (e) => {
+    let newProductUniqeName =
+      e.target.files[0].name.split(".")[0] +
+      String(Date.now() + "." + e.target.files[0].name.split(".")[1]);
+
+    let imageNameConvertion = document.querySelector("#pimage4");
+    let file = imageNameConvertion.files[0];
+    let blob = file.slice(0, file.size, "image/png");
+    let newFile = new File([blob], newProductUniqeName, { type: "image/png" });
+    setFile4(newFile);
+  };
+  const onChange5 = (e) => {
+    let newProductUniqeName =
+      e.target.files[0].name.split(".")[0] +
+      String(Date.now() + "." + e.target.files[0].name.split(".")[1]);
+
+    let imageNameConvertion = document.querySelector("#pimage5");
+    let file = imageNameConvertion.files[0];
+    let blob = file.slice(0, file.size, "image/png");
+    let newFile = new File([blob], newProductUniqeName, { type: "image/png" });
+    setFile5(newFile);
   };
 
   const productNameOnChange = (e) => {
@@ -65,7 +105,19 @@ export default function AdminCreateView() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("product_image", file);
-    formData.append("product_image2", file2);
+    if (file2) {
+      formData.append("product_image2", file2);
+    }
+    if (file3) {
+      formData.append("product_image3", file3);
+    }
+    if (file4) {
+      formData.append("product_image4", file4);
+    }
+    if (file5) {
+      formData.append("product_image5", file5);
+    }
+
     formData.append("product_name", productName);
     formData.append("product_description", productDescription);
     formData.append("product_price", productPrice);
@@ -82,17 +134,21 @@ export default function AdminCreateView() {
         }
       );
 
-      setFileSourceLink("http://localhost:5000" + res.data.image_link);
-      setFileSourceLink2("http://localhost:5000" + res.data.image_link2);
-      setNewProductId(res.data.product_id);
+      // setFileSourceLink("http://localhost:5000" + res.data.image_link);
+      // setFileSourceLink2("http://localhost:5000" + res.data.image_link2);
+      // setFileSourceLink3("http://localhost:5000" + res.data.image_link3);
+      // setFileSourceLink4("http://localhost:5000" + res.data.image_link4);
+      // setFileSourceLink5("http://localhost:5000" + res.data.image_link5);
+      // setNewProductId(res.data.product_id);
+      console.log(res);
 
       setMessage("File Uploaded");
       window.location.href = "http://127.0.0.1:3000/admin";
     } catch (err) {
-      if (err.response.status === 500) {
-        setMessage("There was a problem with the server");
+      if (err.response.status === 400) {
+        setMessage(err.response.data.message);
       } else {
-        setMessage(err.response.data.msg);
+        setMessage(err.response.data.message);
       }
     }
   };
@@ -146,7 +202,7 @@ export default function AdminCreateView() {
           id="pimage1"
           onChange={onChange}
         />
-        <img src={fileSourceLink} alt="" style={{ maxWidth: 150 }}></img>
+        {/* <img src={fileSourceLink} alt="" style={{ maxWidth: 150 }}></img> */}
         <br></br>
         <br></br>
         <br></br>
@@ -158,15 +214,51 @@ export default function AdminCreateView() {
           id="pimage2"
           onChange={onChange2}
         />
-        <img src={fileSourceLink2} alt="" style={{ maxWidth: 150 }}></img>
+        {/* <img src={fileSourceLink2} alt="" style={{ maxWidth: 150 }}></img> */}
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <label>תמונה נוספת</label>
+        <input
+          type="file"
+          name="product_image3"
+          id="pimage3"
+          onChange={onChange3}
+        />
+        {/* <img src={fileSourceLink3} alt="" style={{ maxWidth: 150 }}></img> */}
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <label>תמונה נוספת</label>
+        <input
+          type="file"
+          name="product_image4"
+          id="pimage4"
+          onChange={onChange4}
+        />
+        {/* <img src={fileSourceLink4} alt="" style={{ maxWidth: 150 }}></img> */}
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <label>תמונה נוספת</label>
+        <input
+          type="file"
+          name="product_image5"
+          id="pimage5"
+          onChange={onChange5}
+        />
+        {/* <img src={fileSourceLink5} alt="" style={{ maxWidth: 150 }}></img> */}
         <br></br>
         <br></br>
         <br></br>
         <br></br>
         {/* <input type="submit" placeholder="asdsa"></input> */}
         <button type="submit">הוסף נכס</button>
-        <h3>{newProductId}</h3>
-        {message ? message : null}
+        {/* <h3>{newProductId}</h3> */}
+        <p className="response-message">{message ? message : null}</p>
         {/* LOADER */}
       </form>
     </div>

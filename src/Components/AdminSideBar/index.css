@@ -144,7 +144,7 @@ Sidebar
   font-size: 1.75rem;
   background: transparent;
   border-color: transparent;
-  color: var(--Gray);
+  color: var(--Grey);
   transition: var(--transition);
   cursor: pointer;
   margin-top: 0.2rem;

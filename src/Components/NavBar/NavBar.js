@@ -53,18 +53,14 @@ export default function navbar() {
             <a href="/">פרופיל חברה</a>
           </li>
           <li>
-            <a href="/" exact>
-              עמוד הבית
-            </a>
+            <a href="/">עמוד הבית</a>
           </li>
         </ul>
       </nav>
       <div id="side-menu" className="side-nav">
         <ul>
           <li id="home-small-nav-item">
-            <a href="/" exact>
-              עמוד הבית
-            </a>
+            <a href="/">עמוד הבית</a>
           </li>
           <li id="profile-small-nav-item">
             <a href="/">פרופיל חברה</a>
