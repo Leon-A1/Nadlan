@@ -3,8 +3,6 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   padding: 10px;
-  background-color: var(--Light-Grey);
-  height: 100vh;
 }
 .card {
   cursor: pointer;
@@ -12,7 +10,7 @@
   height: auto;
   max-height: 500px;
   border: 1px solid var(--Black);
-  filter: drop-shadow(1px 1px 3px #222222);
+  filter: drop-shadow(1px 1px 3px black);
 }
 
 .card > h1 {
