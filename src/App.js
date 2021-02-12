@@ -4,6 +4,7 @@ import AdminView from "./Views/AdminView";
 import AdminCreateView from "./Views/AdminCreateView";
 import LandingPageView from "./Views/LandingPageView";
 import ProductDetails from "./Views/ProductDetails";
+import AdminProductDetails from "./Views/AdminProductDetails";
 
 function App() {
   // let productId = "";
@@ -12,6 +13,9 @@ function App() {
       <Route exact path="/" component={LandingPageView}></Route>
       <Route path="/product/:productid">
         <ProductDetails />
+      </Route>
+      <Route path="admin/product/:productid">
+        <AdminProductDetails />
       </Route>
       <Route exact path="/admin" component={AdminView}></Route>
       <Route path="/admin/create-product" component={AdminCreateView}></Route>

@@ -1,51 +1,51 @@
-import React from "react";
-// import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import axios from "axios";
+import axios from "axios";
 import "../Assets/css/views/product-details.css";
 import NavBar from "../Components/NavBar/NavBar";
 
 export default function ProductDetails() {
   let { productid } = useParams();
 
-  // const [productName, setProductName] = useState("");
-  // const [productDescription, setProductDescription] = useState("");
-  // const [productImage, setProductImage] = useState("");
-  console.log("BEFORE USE EFFECT:", productid);
+  const imageHostingUrl = "http://localhost:5000/file/";
 
-  // const fetchItems = async () => {
-  //   const result = await axios(
-  //     // `https://www.breakingbadapi.com/api/characters?name=${query}`
-  //     `http://localhost:5000/api/get_product${productid}`
-  //   );
-  //   console.log(result.data);
-  // };
+  const [productName, setProductName] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productMainImageLink, setProductMainImageLink] = useState("");
+  const [productImageLink2, setProductImageLink2] = useState("");
+  const [productImageLink3, setProductImageLink3] = useState("");
 
-  // useEffect(() => {
-  //   var product_data = axios(
-  //     `http://localhost:5000/api/get_product/${productid}`
-  //   );
-  //   console.log(product_data);
+  useEffect(() => {
+    const fetchItem = async () => {
+      const result = await axios(
+        `http://localhost:5000/api/get_product/${productid}`
+      );
+      console.log(result.data);
+      setProductName(result.data.product_name);
+      setProductDescription(result.data.product_description);
+      setProductPrice(result.data.product_price);
+      setProductMainImageLink(imageHostingUrl + result.data.product_image1);
+      setProductImageLink2(imageHostingUrl + result.data.product_image2);
+      setProductImageLink3(imageHostingUrl + result.data.product_image3);
+    };
 
-  //   return () => {
-  //     console.log(product_data);
-  //     setProductName(product_data.data["product_name"]);
-  //   };
-  // }, []);
-  // console.log(product_data);
+    fetchItem();
+  });
 
   return (
     <div>
       <NavBar />
 
       <div className="product-details-container">
-        <h1>product details</h1>
-
-        <h3>Product ID: {productid}</h3>
-        {/* <h3>Product Name: {productName}</h3> */}
-        {/* <h3>Product Description: {productDescription}</h3> */}
-        {/* <img src={productImage} alt=""></img> */}
-        {/* {productImage} */}
+        <h1>{productName}</h1>
+        <p>{productDescription}</p>
+        <p>&#8362;{productPrice}</p>
+        <div className="product-gallery">
+          <img src={productMainImageLink} alt=""></img>
+          <img src={productImageLink2} alt=""></img>
+          <img src={productImageLink3} alt=""></img>
+        </div>
       </div>
     </div>
   );

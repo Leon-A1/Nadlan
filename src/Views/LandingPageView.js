@@ -11,13 +11,6 @@ export default function LandingPageView() {
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
 
-  // const createProductIdAction = () => {
-  //   var selectedProductIdholder =
-  //     // "http://localhost:3000/product/" + selectedProductId;
-  //     "http://localhost:3000/product/" + selectedProductId;
-  //   setSelectedProductId(selectedProductIdholder);
-  // };
-
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`http://localhost:5000/api/products${query}`);
@@ -33,11 +26,7 @@ export default function LandingPageView() {
       <PageHeader />
       <Search getQuery={(q) => setQuery("/" + q)} />
 
-      <ProductGrid
-        isLoading={isLoading}
-        items={items}
-        // openProductDetailsPage={openProductDetailsPage}
-      />
+      <ProductGrid isLoading={isLoading} items={items} />
     </div>
   );
 }

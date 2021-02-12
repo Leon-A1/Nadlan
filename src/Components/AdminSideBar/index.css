@@ -40,7 +40,7 @@ Variables
 }
 .sidebar-toggle {
   position: fixed;
-  top: 2rem;
+  top: 1.3rem;
   left: 2rem;
   font-size: 1.5rem;
   background: transparent;
@@ -50,6 +50,7 @@ Variables
   transition: var(--transition);
   cursor: pointer;
   animation: bounce 2s ease-in-out infinite;
+  z-index: 100;
 }
 
 @keyframes bounce {

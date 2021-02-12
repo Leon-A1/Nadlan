@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../Assets/css/views/admin-view.css";
 import axios from "axios";
 import Search from "../Components/Search/Search";
-import ProductGrid from "../Components/ProductGrid/ProductGrid";
+import ProductGrid from "../Components/AdminProductGrid/ProductGrid";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 
 export default function AdminView() {
@@ -12,11 +12,7 @@ export default function AdminView() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(
-        // `https://www.breakingbadapi.com/api/characters?name=${query}`
-        `http://localhost:5000/api/products${query}`
-      );
-      console.log(result);
+      const result = await axios(`http://localhost:5000/api/products${query}`);
       setItems(result.data);
       setIsLoading(false);
     };

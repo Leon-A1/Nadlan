@@ -14,9 +14,6 @@ export default function ProductDetails() {
     axios
       .post("http://localhost:5000/api/get_product/", { productId: productid })
       .then((response) => {
-        // console.log(response);
-        // console.log(response.data.name);
-        // console.log(response.data.description);
         console.log(response.data);
         setProductImage(response.data);
         setProductName(response.data.name);
@@ -25,7 +22,6 @@ export default function ProductDetails() {
       .catch((e) => {
         console.log(e);
       });
-    // console.log(productInfo);
   }, []);
   return (
     <div className="product-details-container">
@@ -35,7 +31,6 @@ export default function ProductDetails() {
       <h3>Product Name: {productName}</h3>
       <h3>Product Description: {productDescription}</h3>
       <img src={productImage} alt=""></img>
-      {/* {productImage} */}
     </div>
   );
 }

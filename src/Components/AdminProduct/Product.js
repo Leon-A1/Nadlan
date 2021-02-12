@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//UI PRODUCT COMPONENT
+//ADMIN PRODUCT COMPONENT
 
 const Product = ({ product }) => {
   console.log(product);
@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     "http://localhost:5000/file/" + String(product.product_image1);
 
   return (
-    <Link to={`/product/${product._id}`}>
+    <>
       <div className="card">
         <img src={imageLink1} alt="" />
         <h1>{product.product_name}</h1>
@@ -19,8 +19,12 @@ const Product = ({ product }) => {
         <p className="go-to-details">...</p>
         <p className="go-to-details">מידע נוסף</p>
         <p className="price">&#8362;{product.product_price}</p>
+        <button>
+          <Link to={`admin/product/${product._id}`}>Edit Product </Link>
+        </button>
+        <button>Delete Product </button>
       </div>
-    </Link>
+    </>
   );
 };
 

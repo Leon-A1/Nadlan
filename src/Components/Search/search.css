@@ -13,6 +13,7 @@
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-top: 1px;
   outline-color: var(--Red);
+  font-family: Assistant, sans-serif;
 
   color: var(--Black);
 }
