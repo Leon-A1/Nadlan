@@ -12,6 +12,7 @@ a {
 
 :root {
   --Red: #8d021f;
+  --Light-Red: rgba(141, 2, 31, 0.6);
   --Grey: #6d6a75;
   --Light-Grey: #bfbdc1;
   --Black: #030301;

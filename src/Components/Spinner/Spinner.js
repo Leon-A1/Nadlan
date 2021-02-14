@@ -9,7 +9,7 @@ const Spinner = () => {
         width: "200px",
         margin: "auto",
         display: "block",
-        marginTop: "250px",
+        marginTop: "5vh",
       }}
       alt="Loading"
     />

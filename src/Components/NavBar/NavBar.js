@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import logo from "./logo.png";
+import { Link } from "react-router-dom";
 
 import "../../Assets/css/aos.css";
 
@@ -49,9 +50,7 @@ export default function navbar() {
             <a href="/">צור קשר</a>
           </li>
 
-          <li>
-            <a href="/">פרופיל חברה</a>
-          </li>
+          <Link to="/about">פרופיל חברה</Link>
           <li>
             <a href="/">עמוד הבית</a>
           </li>

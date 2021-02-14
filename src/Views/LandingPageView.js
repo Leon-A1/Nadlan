@@ -6,6 +6,7 @@ import Search from "../Components/Search/Search";
 import ProductGrid from "../Components/ProductGrid/ProductGrid";
 import PageHeader from "../Components/PageHeader/PageHeader";
 import PageFooter from "../Components/Footer/Footer";
+import Spinner from "../Components/MainLandingSpinner/Spinner";
 
 export default function LandingPageView() {
   const [items, setItems] = useState([]);
@@ -25,6 +26,7 @@ export default function LandingPageView() {
   }, [query]);
   return (
     <div className="App">
+      <Spinner />
       <Navbar />
       <PageHeader />
       <Search getQuery={(q) => setQuery("/" + q)} />

@@ -23,10 +23,10 @@ export default function Footer() {
 
             <ul>
               <li>
-                <NavLink to="/getintouch">צור קשר</NavLink>
+                <NavLink to="/about">צור קשר</NavLink>
               </li>
               <li>
-                <NavLink to="/companyprofile">פרופיל חברה</NavLink>
+                <NavLink to="/about">פרופיל חברה</NavLink>
               </li>
               <li>
                 <a href="/" exact="true">

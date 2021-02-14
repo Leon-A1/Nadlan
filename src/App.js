@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import AdminView from "./Views/AdminView";
 import AdminCreateView from "./Views/AdminCreateView";
 import LandingPageView from "./Views/LandingPageView";
+import AboutPageView from "./Views/AboutPageView";
 import ProductDetails from "./Views/ProductDetails";
 import AdminUpdateProductView from "./Views/AdminEditView";
 
@@ -11,6 +12,7 @@ function App() {
   return (
     <Router>
       <Route exact path="/" component={LandingPageView}></Route>
+      <Route exact path="/about" component={AboutPageView}></Route>
       <Route path="/product/:productid">
         <ProductDetails />
       </Route>
