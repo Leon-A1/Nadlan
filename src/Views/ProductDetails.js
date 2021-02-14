@@ -8,7 +8,7 @@ import Footer from "../Components/Footer/Footer";
 export default function ProductDetails() {
   let { productid } = useParams();
 
-  const imageHostingUrl = "http://localhost:5000/file/";
+  const imageHostingUrl = "https://nadlan-server.herokuapp.com/file/";
 
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");

@@ -7,7 +7,8 @@ const Product = ({ product }) => {
   console.log(product);
 
   const imageLink1 =
-    "http://nadlan-server.herokuapp.com/file/" + String(product.product_image1);
+    "https://nadlan-server.herokuapp.com/file/" +
+    String(product.product_image1);
 
   return (
     <Link to={`/product/${product._id}`}>

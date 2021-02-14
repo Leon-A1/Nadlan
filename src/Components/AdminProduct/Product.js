@@ -8,7 +8,8 @@ const Product = ({ product }) => {
   console.log(product);
 
   const imageLink1 =
-    "http://nadlan-server.herokuapp.com/file/" + String(product.product_image1);
+    "https://nadlan-server.herokuapp.com/file/" +
+    String(product.product_image1);
 
   const handleDeleteProduct = () => {
     const confirmDelete = document.querySelector("#confirm-delete");
@@ -22,7 +23,7 @@ const Product = ({ product }) => {
     const productDeleteId = String(product._id);
 
     const res = await axios.get(
-      `http://nadlan-server.herokuapp.com/api/product/delete/${productDeleteId}`
+      `https://nadlan-server.herokuapp.com/api/product/delete/${productDeleteId}`
     );
     console.log(res);
     window.location.href = "http://127.0.0.1:3000/admin";

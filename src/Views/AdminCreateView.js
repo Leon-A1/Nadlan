@@ -7,7 +7,7 @@ import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 // setTimeout(() => console.log("file2:", file2), 2000);
 
 export default function AdminCreateView() {
-  const ApiFileURL = "http://localhost:5000/file/";
+  const ApiFileURL = "https://nadlan-server.herokuapp.com/file/";
   // eslint-disable-next-line
   const [file, setFile] = useState("");
   const [file2, setFile2] = useState("");
@@ -39,7 +39,7 @@ export default function AdminCreateView() {
     formData.append("product_image", file);
     try {
       let res = await axios.post(
-        "http://localhost:5000/api/create_image",
+        "https://nadlan-server.herokuapp.com/api/create_image",
         formData,
         {
           headers: {
@@ -75,7 +75,7 @@ export default function AdminCreateView() {
       formData.append("product_image", newFile);
 
       let res = await axios.post(
-        "http://localhost:5000/api/create_image",
+        "https://nadlan-server.herokuapp.com/api/create_image",
         formData,
         {
           headers: {
@@ -110,7 +110,7 @@ export default function AdminCreateView() {
       formData.append("product_image", newFile);
 
       let res = await axios.post(
-        "http://localhost:5000/api/create_image",
+        "https://nadlan-server.herokuapp.com/api/create_image",
         formData,
         {
           headers: {
@@ -156,11 +156,15 @@ export default function AdminCreateView() {
 
     try {
       const res = await axios
-        .post("http://localhost:5000/api/create_product", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+        .post(
+          "https://nadlan-server.herokuapp.com/api/create_product",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        )
         .then(setMessage("File Uploaded"))
         .then((window.location.href = "http://127.0.0.1:3000/admin"));
 

@@ -15,7 +15,7 @@ export default function LandingPageView() {
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(
-        `http://nadlan-server.herokuapp.com/api/products${query}`
+        `https://nadlan-server.herokuapp.com/api/products${query}`
       );
       setItems(result.data);
       setIsLoading(false);
