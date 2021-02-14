@@ -12,7 +12,9 @@ export default function AdminView() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(`http://localhost:5000/api/products${query}`);
+      const result = await axios(
+        `https://nadlan-server.herokuapp.com/api/products${query}`
+      );
       setItems(result.data);
       setIsLoading(false);
     };

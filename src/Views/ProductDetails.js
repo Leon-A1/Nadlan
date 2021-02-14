@@ -20,7 +20,7 @@ export default function ProductDetails() {
   useEffect(() => {
     const fetchItem = async () => {
       const result = await axios(
-        `http://localhost:5000/api/get_product/${productid}`
+        `https://nadlan-server.herokuapp.com/api/get_product/${productid}`
       );
       console.log(result.data);
       setProductName(result.data.product_name);

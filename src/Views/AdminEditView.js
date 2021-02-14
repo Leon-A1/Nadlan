@@ -13,7 +13,7 @@ export default function AdminEditView() {
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productPrice, setProductPrice] = useState("");
-  const imageHostingUrl = "http://localhost:5000/file/";
+  const imageHostingUrl = "https://nadlan-server.herokuapp.com/file/";
 
   // eslint-disable-next-line
   const [file, setFile] = useState("");
@@ -31,7 +31,7 @@ export default function AdminEditView() {
   useEffect(() => {
     const fetchItem = async () => {
       const result = await axios(
-        `http://localhost:5000/api/get_product/${productid}`
+        `https://nadlan-server.herokuapp.com/api/get_product/${productid}`
       );
       // console.log(result.data);
       setProductName(result.data.product_name);
@@ -61,7 +61,7 @@ export default function AdminEditView() {
     formData.append("product_image", file);
     try {
       let res = await axios.post(
-        "http://localhost:5000/api/create_image",
+        "https://nadlan-server.herokuapp.com/api/create_image",
         formData,
         {
           headers: {
@@ -97,7 +97,7 @@ export default function AdminEditView() {
       formData.append("product_image", newFile);
 
       let res = await axios.post(
-        "http://localhost:5000/api/create_image",
+        "https://nadlan-server.herokuapp.com/api/create_image",
         formData,
         {
           headers: {
@@ -132,7 +132,7 @@ export default function AdminEditView() {
       formData.append("product_image", newFile);
 
       let res = await axios.post(
-        "http://localhost:5000/api/create_image",
+        "https://nadlan-server.herokuapp.com/api/create_image",
         formData,
         {
           headers: {
@@ -178,7 +178,7 @@ export default function AdminEditView() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/update_product",
+        "https://nadlan-server.herokuapp.com/api/update_product",
         formData,
         {
           headers: {
