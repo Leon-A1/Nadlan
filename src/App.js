@@ -4,7 +4,7 @@ import AdminView from "./Views/AdminView";
 import AdminCreateView from "./Views/AdminCreateView";
 import LandingPageView from "./Views/LandingPageView";
 import ProductDetails from "./Views/ProductDetails";
-import AdminProductDetails from "./Views/AdminProductDetails";
+import AdminUpdateProductView from "./Views/AdminEditView";
 
 function App() {
   // let productId = "";
@@ -14,13 +14,11 @@ function App() {
       <Route path="/product/:productid">
         <ProductDetails />
       </Route>
-      <Route path="admin/product/:productid">
-        <AdminProductDetails />
-      </Route>
+
       <Route exact path="/admin" component={AdminView}></Route>
       <Route path="/admin/create-product" component={AdminCreateView}></Route>
-      <Route path="/admin/product/:productid">
-        <ProductDetails />
+      <Route path="/admin/product/update/:productid">
+        <AdminUpdateProductView />
       </Route>
     </Router>
   );

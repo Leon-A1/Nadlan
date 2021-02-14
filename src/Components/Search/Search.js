@@ -5,8 +5,15 @@ const Search = ({ getQuery }) => {
   const [text, setText] = useState("");
 
   const onChange = (q) => {
-    setText(q);
-    getQuery(q);
+    console.log(q);
+    if (q !== "") {
+      setText(q);
+      getQuery(q);
+    } else {
+      q = 1;
+      setText("");
+      getQuery(q);
+    }
   };
 
   return (
@@ -15,7 +22,7 @@ const Search = ({ getQuery }) => {
         <input
           type="text"
           className="form-control"
-          placeholder="חיפוש נכסים"
+          placeholder=".... חיפוש נכסים מהיר"
           value={text}
           onChange={(e) => onChange(e.target.value)}
           autoFocus

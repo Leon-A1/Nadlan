@@ -5,6 +5,7 @@ import axios from "axios";
 import Search from "../Components/Search/Search";
 import ProductGrid from "../Components/ProductGrid/ProductGrid";
 import PageHeader from "../Components/PageHeader/PageHeader";
+import PageFooter from "../Components/Footer/Footer";
 
 export default function LandingPageView() {
   const [items, setItems] = useState([]);
@@ -27,6 +28,7 @@ export default function LandingPageView() {
       <Search getQuery={(q) => setQuery("/" + q)} />
 
       <ProductGrid isLoading={isLoading} items={items} />
+      <PageFooter />
     </div>
   );
 }

@@ -1,15 +1,16 @@
 .search {
   width: 100%;
   background-color: var(--Red);
-  height: 10vh;
+  height: 5vh;
 }
 .search form input {
-  height: 10vh;
+  height: 5vh;
+
   width: 100%;
   display: block;
   /* margin-left: 69.9%; */
   font-size: 1.5rem;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-top: 1px;
   outline-color: var(--Red);
@@ -22,7 +23,7 @@
 }
 @media (min-width: 900px) {
   .search form input {
-    height: 10vh;
+    height: 5vh;
     width: 50%;
     display: block;
     margin: auto;

@@ -3,7 +3,6 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   padding: 10px;
-  background-color: var(--Light-Grey);
   height: 100%;
 }
 .card {
@@ -14,7 +13,79 @@
   border: 1px solid var(--Black);
   filter: drop-shadow(1px 1px 3px #222222);
 }
+.edit-product-button {
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 3rem;
+  border: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: var(--Red);
+  cursor: pointer;
+  transition: 300ms;
+  outline: none;
+}
+.edit-product-button:hover {
+  color: var(--White);
+  transition: 300ms;
+}
+.edit-product-link {
+  text-decoration: none;
+  color: red;
+  outline: none;
+}
 
+.delete-product-button {
+  background-color: transparent;
+  font-size: 3rem;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--Red);
+  cursor: pointer;
+  transition: 300ms;
+  outline: none;
+}
+.delete-product-button:hover {
+  color: var(--White);
+  transition: 300ms;
+}
+.delete-product-confirm {
+  position: fixed;
+  top: 250px;
+  left: 0;
+  right: 1px;
+  height: 300px;
+  z-index: 1000;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--Red);
+  filter: drop-shadow(1px 1px 15px black);
+  display: none;
+}
+.delete-product-confirm button {
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  margin: 0.5rem;
+  color: var(--Black);
+  background-color: var(--White);
+  transition: 300ms;
+  cursor: pointer;
+}
+.delete-product-confirm button:hover {
+  color: var(--White);
+  background-color: var(--Black);
+  transition: 300ms;
+}
 .card > h1 {
   font-size: 1.75rem;
   padding: 1rem;
@@ -66,6 +137,19 @@
 @media (min-width: 600px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .delete-product-confirm {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+
+    /* bottom: 50vh; */
+    /* right: 50%; */
+    height: 300px;
+    width: 500px;
   }
 }
 @media (min-width: 1200px) {

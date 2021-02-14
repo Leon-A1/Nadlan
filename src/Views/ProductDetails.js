@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../Assets/css/views/product-details.css";
 import NavBar from "../Components/NavBar/NavBar";
+import Footer from "../Components/Footer/Footer";
 
 export default function ProductDetails() {
   let { productid } = useParams();
@@ -47,6 +48,7 @@ export default function ProductDetails() {
           <img src={productImageLink3} alt=""></img>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
