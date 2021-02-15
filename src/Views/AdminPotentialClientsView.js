@@ -11,14 +11,11 @@ export default function AdminView() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //   const [query, setQuery] = useState("");
-
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`${API_URL}potential_clients`);
       setItems(result.data);
       setIsLoading(false);
-      //   console.log(result);
     };
 
     fetchItems();
@@ -30,18 +27,6 @@ export default function AdminView() {
     window.location.href = "/admin/potential_clients";
 
     console.log(id);
-  };
-
-  const deleteCancel = () => {
-    // const cancelDelete = document.querySelector("#confirm-delete");
-    // cancelDelete.style.display = "none";
-  };
-  const deletePotentialCLient = async (id) => {
-    console.log(id);
-
-    // const res = await axios.get(`${API_URL}potential_client/delete/${id}`);
-    // console.log(res);
-    // window.location.href = "/admin/potential_clients";
   };
 
   return isLoading ? (
