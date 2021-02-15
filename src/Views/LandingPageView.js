@@ -19,9 +19,10 @@ export default function LandingPageView() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(`${API_URL}products${query}`);
+      const result = await axios.get(`${API_URL}products${query}`);
       setItems(result.data);
       setIsLoading(false);
+      console.log(result.data);
     };
 
     fetchItems();
@@ -31,8 +32,7 @@ export default function LandingPageView() {
       <Spinner />
       <Navbar />
       <PageHeader />
-      <Search getQuery={(q) => setQuery("/" + q)} />
-
+      <Search getQuery={(q) => setQuery(q)} />
       <ProductGrid isLoading={isLoading} items={items} />
       <PageFooter />
     </div>

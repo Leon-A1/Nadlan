@@ -5,14 +5,12 @@ const Search = ({ getQuery }) => {
   const [text, setText] = useState("");
 
   const onChange = (q) => {
-    console.log(q);
-    if (q !== "") {
+    if (q === "") {
       setText(q);
       getQuery(q);
     } else {
-      q = 1;
-      setText("");
-      getQuery(q);
+      setText(q);
+      getQuery("/" + q);
     }
   };
 
