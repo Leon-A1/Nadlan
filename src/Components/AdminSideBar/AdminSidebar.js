@@ -35,6 +35,9 @@ const Sidebar = () => {
           <li>
             <a href="/admin">נכסים קיימים</a>
           </li>
+          <li>
+            <a href="/admin/potential_clients">לקוחות פוטנציאלים</a>
+          </li>
           {/* <li>
             <a href="/#">link 3</a>
           </li> */}

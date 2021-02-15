@@ -14,13 +14,46 @@
   width: 100%;
   max-width: 500px;
 }
-
-.contact-page-container .access-navbar {
+.contact-page-container p {
+  color: var(--Black);
+  text-align: right;
   padding-top: 20px;
   padding-right: 20px;
+
+  width: 100%;
+  max-width: 500px;
+}
+.contact-page-container h3 {
+  color: var(--Black);
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-page-container .email-me {
+  color: var(--Black);
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+
+  width: 100%;
+  max-width: 500px;
+}
+.contact-page-container .email-me i {
+  padding: 10px;
+}
+.contact-page-container .email-me:hover {
+  color: var(--Red);
+}
+.contact-page-container .access-navbar {
+  padding-top: 20px;
   width: 100%;
   text-align: right;
   max-width: 500px;
+  padding-right: 20px;
 }
 .contact-page-container .access-navbar a {
   margin-left: 5px;

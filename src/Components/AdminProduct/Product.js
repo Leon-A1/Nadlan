@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import { GlobalContext } from "../../context/GlobalState";
 //ADMIN PRODUCT COMPONENT
 
 const Product = ({ product }) => {
+  const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
+
   console.log(product);
 
-  const imageLink1 =
-    "https://nadlan-server.herokuapp.com/file/" +
-    String(product.product_image1);
+  const imageLink1 = FILE_STORAGE_URL + String(product.product_image1);
 
   const handleDeleteProduct = () => {
     const confirmDelete = document.querySelector("#confirm-delete");
@@ -22,9 +23,7 @@ const Product = ({ product }) => {
   const confirmDelete = async () => {
     const productDeleteId = String(product._id);
 
-    const res = await axios.get(
-      `https://nadlan-server.herokuapp.com/api/product/delete/${productDeleteId}`
-    );
+    const res = await axios.get(`${API_URL}product/delete/${productDeleteId}`);
     console.log(res);
     window.location.href = "http://127.0.0.1:3000/admin";
   };

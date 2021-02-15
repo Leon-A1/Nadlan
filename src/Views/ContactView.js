@@ -20,6 +20,19 @@ export default function ContactView() {
         </div>
 
         <h2>צרו קשר</h2>
+        <h3>נדלן.קום</h3>
+        <p>A+ קבלן רשום בסיווג</p>
+        <p>מס' קבלן (רישיון)853213545</p>
+        <a
+          className="email-me"
+          // style={{ paddingRight: 20 }}
+          href="mailto:leonaviev@gmail.com"
+        >
+          <i className="far fa-envelope"></i>
+          support@nadlan.com
+        </a>
+        <p>אשדוד</p>
+
         <GetInTouchForm />
         {/* </div> */}
       </div>

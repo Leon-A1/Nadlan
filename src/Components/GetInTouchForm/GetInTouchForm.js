@@ -20,10 +20,10 @@ export default function GetInContact() {
       NewName.current.value
     )
       axios
-        .post(`${API_URL}save_email`, {
-          email_adress: NewEmailAdress.current.value,
-          phone_number: NewPhoneNumber.current.value,
-          name: NewName.current.value,
+        .post(`${API_URL}save_potential_client_details`, {
+          client_email: NewEmailAdress.current.value,
+          client_number: NewPhoneNumber.current.value,
+          client_name: NewName.current.value,
         })
         .then((res) => {
           console.log(res);
@@ -36,14 +36,10 @@ export default function GetInContact() {
   const NewPhoneNumber = useRef();
 
   return (
-    <div className="contact-form-container">
-      <h3>נדלן.קום</h3>
-      <p>A+ קבלן רשום בסיווג</p>
-      <p>מס' קבלן (רישיון)853213545</p>
-      <a className="email-me" href="mailto:leonaviev@gmail.com">
-        support@nadlan.com
-      </a>
-      <p>אשדוד</p>
+    <div
+      className="contact-form-container"
+      style={{ display: "block", margin: "auto" }}
+    >
       <img
         src={Amap}
         style={{

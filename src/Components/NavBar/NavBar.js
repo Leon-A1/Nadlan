@@ -7,7 +7,7 @@ import "../../Assets/css/aos.css";
 
 export default function navbar() {
   function openSlideMenu() {
-    document.getElementById("side-menu").style.width = "250px";
+    document.getElementById("side-menu").style.width = "300px";
     document.getElementById("home-small-nav-item").style.opacity = "1";
     document.getElementById("profile-small-nav-item").style.opacity = "1";
     document.getElementById("contact-small-nav-item").style.opacity = "1";

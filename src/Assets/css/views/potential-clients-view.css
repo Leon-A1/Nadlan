@@ -1,0 +1,58 @@
+.potential-clients-list {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+.potential-clients-list h1 {
+  color: var(--Red);
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  text-align: right;
+  width: 100%;
+}
+.potential-clients-list .card {
+  margin: 20px;
+  background-color: var(--Light-Grey);
+  width: 100%;
+}
+.potential-clients-list .card .client_name {
+  text-align: right;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.potential-clients-list .card .client_email {
+  width: 100%;
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: var(--Black);
+}
+.potential-clients-list .card .client_email a {
+  color: var(--Black);
+}
+.potential-clients-list .card .client_email a i {
+  margin-left: 5px;
+}
+.potential-clients-list .card .client_email a:hover {
+  color: var(--Red);
+  font-weight: 900;
+}
+
+.potential-clients-list .card .client_number {
+  width: 100%;
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+.potential-clients-list .card .client_number a {
+  color: var(--Black);
+}
+.potential-clients-list .card .client_number a i {
+  margin-left: 5px;
+}
+.potential-clients-list .card .client_number a:hover {
+  color: var(--Red);
+  font-weight: 900;
+}

@@ -4,6 +4,7 @@ import axios from "axios";
 import "../Assets/css/views/product-details.css";
 import NavBar from "../Components/NavBar/NavBar";
 import Footer from "../Components/Footer/Footer";
+import GetInTouch from "../Components/GetInTouchForm/GetInTouchForm";
 
 import { GlobalContext } from "../context/GlobalState";
 
@@ -41,14 +42,19 @@ export default function ProductDetails() {
 
       <div className="product-details-container">
         <h1>{productName}</h1>
+
         <p>{productDescription}</p>
         <p>&#8362;{productPrice}</p>
+        <a className="product-details-call-now" href="tel:+972538268640">
+          לקבלת ייעוץ חינם <i className="fas fa-phone-square-alt"></i>
+        </a>
         <div className="product-gallery">
           <img src={productMainImageLink} alt=""></img>
           <img src={productImageLink2} alt=""></img>
           <img src={productImageLink3} alt=""></img>
         </div>
       </div>
+      <GetInTouch />
       <Footer />
     </div>
   );
