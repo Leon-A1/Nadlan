@@ -30,6 +30,8 @@
   border: 1px solid var(--Red);
   border-radius: 5px;
   transition: 300ms;
+  min-width: 180px;
+  text-align: center;
 }
 .product-details-call-now:hover {
   color: var(--White);
