@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import "../Assets/css/views/admin-view.css";
+import "../Assets/css/views/admin-create-product-view.css";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 
 import { GlobalContext } from "../context/GlobalState";
@@ -182,12 +183,13 @@ export default function AdminCreateView() {
         <label htmlFor="product_name">כתובת הנכס</label>
         <input type="text" name="product_name" onChange={productNameOnChange} />
         <label htmlFor="product_description">תאור הנכס</label>
-        <input
-          type="text"
+        <textarea
+          rows="10"
+          cols="auto"
           name="product_description"
           onChange={productDescriptionOnChange}
         />
-        <label htmlFor="product_price">Product price</label>
+        <label htmlFor="product_price">מחיר</label>
         <input
           type="text"
           name="product_price"

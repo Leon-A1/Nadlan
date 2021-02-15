@@ -205,12 +205,11 @@ export default function AdminEditView() {
           style={{ textAlign: "right" }}
         />
         <label htmlFor="product_description">תאור הנכס</label>
-        <input
-          type="text"
-          defaultValue={productDescription}
+        <textarea
+          rows="10"
+          cols="auto"
           name="product_description"
           onChange={productDescriptionOnChange}
-          style={{ textAlign: "right" }}
         />
         <label htmlFor="product_price">Product price</label>
         <input

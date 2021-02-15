@@ -1,0 +1,38 @@
+.create-product-form {
+  padding: 20px;
+}
+.create-product-form input {
+  border: 1px solid var(--Black);
+  outline: 1px solid var(--Red);
+  outline: none;
+  text-align: right;
+  color: var(--Black);
+}
+.create-product-form input:focus {
+  border: 1px solid var(--Red);
+}
+.create-product-form textarea {
+  border: 1px solid var(--Black);
+  outline: 1px solid var(--Red);
+  outline: none;
+  text-align: right;
+  width: 100%;
+  margin-right: -5px;
+  padding: 10px;
+  font-size: 2rem;
+  font-family: "assistant", sans-serif;
+}
+.create-product-form textarea:focus {
+  border: 1px solid var(--Red);
+}
+.create-product-form button {
+  background-color: var(--White);
+  color: var(--Red);
+  border-radius: 5px;
+  transition: 300ms;
+}
+.create-product-form button:hover {
+  background-color: var(--Red);
+  color: var(--White);
+  transition: 300ms;
+}
