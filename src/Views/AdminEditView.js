@@ -206,6 +206,7 @@ export default function AdminEditView() {
         />
         <label htmlFor="product_description">תאור הנכס</label>
         <textarea
+          defaultValue={productDescription}
           rows="10"
           cols="auto"
           name="product_description"
