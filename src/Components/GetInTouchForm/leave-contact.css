@@ -66,6 +66,8 @@
   color: var(--White);
   border: solid var(--Light-Red) 1px;
   background-color: var(--Light-Red);
-
   transition: 600ms;
+}
+#form-response-message {
+  text-align: center;
 }

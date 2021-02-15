@@ -51,7 +51,7 @@ export default function ProductDetails() {
 
         <p>{productDescription}</p>
         <p>&#8362;{productPrice}</p>
-        <a className="product-details-call-now" href="tel:+972538268640">
+        <a className="product-details-call-now" href="tel:+972536261201">
           לקבלת ייעוץ חינם <i className="fas fa-phone-square-alt"></i>
         </a>
         <div className="product-gallery">
