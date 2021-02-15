@@ -4,7 +4,7 @@ import { GlobalContext } from "../../context/GlobalState";
 
 //ADMIN PRODUCT COMPONENT
 const Product = ({ product }) => {
-  const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
+  const { FILE_STORAGE_URL } = useContext(GlobalContext);
 
   console.log(product);
 
