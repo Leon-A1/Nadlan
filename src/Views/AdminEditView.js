@@ -171,10 +171,7 @@ export default function AdminEditView() {
         },
       });
       console.log(res);
-      setTimeout(
-        () => (window.location.href = "http://127.0.0.1:3000/admin"),
-        500
-      );
+      setTimeout(() => (window.location.href = "/admin"), 500);
     } catch (err) {
       if (err.response.status === 400) {
         setMessage(err.response.data.message);

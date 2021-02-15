@@ -38,7 +38,7 @@ export default function AdminView() {
 
     const res = await axios.get(`${API_URL}potential_client/delete/${id}`);
     console.log(res);
-    window.location.href = "http://127.0.0.1:3000/admin/potential_clients";
+    window.location.href = "/admin/potential_clients";
   };
 
   return isLoading ? (

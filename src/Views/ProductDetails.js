@@ -5,10 +5,12 @@ import "../Assets/css/views/product-details.css";
 import NavBar from "../Components/NavBar/NavBar";
 import Footer from "../Components/Footer/Footer";
 import GetInTouch from "../Components/GetInTouchForm/GetInTouchForm";
+import Spinner from "../Components/MainLandingSpinner/Spinner";
 
 import { GlobalContext } from "../context/GlobalState";
 
 export default function ProductDetails() {
+  const [isLoading, setIsLoading] = useState(false);
   const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
 
   let { productid } = useParams();
@@ -22,6 +24,8 @@ export default function ProductDetails() {
 
   useEffect(() => {
     const fetchItem = async () => {
+      setIsLoading(true);
+
       const result = await axios(`${API_URL}get_product/${productid}`);
       console.log(result.data);
       setProductName(result.data.product_name);
@@ -30,13 +34,15 @@ export default function ProductDetails() {
       setProductMainImageLink(FILE_STORAGE_URL + result.data.product_image1);
       setProductImageLink2(FILE_STORAGE_URL + result.data.product_image2);
       setProductImageLink3(FILE_STORAGE_URL + result.data.product_image3);
-      console.log(productImageLink2);
+      setIsLoading(false);
     };
 
     fetchItem();
-  });
+  }, [API_URL, FILE_STORAGE_URL, productid]);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div>
       <NavBar />
 

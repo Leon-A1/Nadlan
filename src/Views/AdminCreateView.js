@@ -146,19 +146,15 @@ export default function AdminCreateView() {
     formData.append("product_price", productPrice);
 
     try {
-      const res = await axios
-        .post(`${API_URL}create_product`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then(setMessage("File Uploaded"))
-        .then((window.location.href = "http://127.0.0.1:3000/admin"));
-
+      const res = await axios.post(`${API_URL}create_product`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(res);
 
       setMessage("File Uploaded");
-      window.location.href = "http://127.0.0.1:3000/admin";
+      window.location.href = "/admin";
     } catch (err) {
       if (err.response.status === 400) {
         setMessage(err.response.data.message);
