@@ -4,7 +4,6 @@ import headerBackgroundImg from "../Assets/img/page-header-image.jpg";
 import Footer from "../Components/Footer/Footer";
 import NavBar from "../Components/NavBar/NavBar";
 import GetInTouchForm from "../Components/GetInTouchForm/GetInTouchForm";
-// import Header from "../Components/Header";
 
 export default function ContactView() {
   return (
@@ -23,18 +22,13 @@ export default function ContactView() {
         <h3>נדלן.קום</h3>
         <p>A+ קבלן רשום בסיווג</p>
         <p>מס' קבלן (רישיון)853213545</p>
-        <a
-          className="email-me"
-          // style={{ paddingRight: 20 }}
-          href="mailto:leonaviev@gmail.com"
-        >
+        <a className="email-me" href="mailto:leonaviev@gmail.com">
           <i className="far fa-envelope"></i>
           support@nadlan.com
         </a>
         <p>אשדוד</p>
 
         <GetInTouchForm />
-        {/* </div> */}
       </div>
       <Footer></Footer>
     </>

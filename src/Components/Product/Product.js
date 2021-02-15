@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 //UI PRODUCT COMPONENT
 
 const Product = ({ product }) => {
-  console.log(product);
-
   const imageLink1 =
     "https://nadlan-server.herokuapp.com/file/" +
     String(product.product_image1);

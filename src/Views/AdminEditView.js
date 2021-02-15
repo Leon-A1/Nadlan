@@ -180,7 +180,14 @@ export default function AdminEditView() {
       }
     }
   };
-
+  const deleteProduct = async (e) => {
+    e.preventDefault();
+    console.log(productid);
+    console.log("DELETING");
+    const res = await axios.get(`${API_URL}product/delete/${productid}`);
+    console.log(res);
+    window.location.href = "/admin";
+  };
   return (
     <div className="admin-view-container">
       <Sidebar />
@@ -274,7 +281,16 @@ export default function AdminEditView() {
         <br></br>
         <br></br>
         <br></br>
-        <button type="submit">שמור נכס</button>
+        <button type="submit">שמור ועדכן נכס</button>
+        <button
+          style={{
+            marginTop: 30,
+            opacity: 0.8,
+          }}
+          onClick={deleteProduct}
+        >
+          מחק נכס לצמיתות <i className="fas fa-trash"></i>
+        </button>
         {/* LOADER */}
       </form>
     </div>

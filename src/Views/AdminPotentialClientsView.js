@@ -24,21 +24,24 @@ export default function AdminView() {
     fetchItems();
   }, [API_URL]);
 
-  const handleDeleteProduct = () => {
-    const confirmDelete = document.querySelector("#confirm-delete");
-    confirmDelete.style.display = "block";
+  const handleDeleteProduct = async (id) => {
+    const res = await axios.get(`${API_URL}potential_client/delete/${id}`);
+    console.log(res);
+    window.location.href = "/admin/potential_clients";
+
+    console.log(id);
   };
 
   const deleteCancel = () => {
-    const cancelDelete = document.querySelector("#confirm-delete");
-    cancelDelete.style.display = "none";
+    // const cancelDelete = document.querySelector("#confirm-delete");
+    // cancelDelete.style.display = "none";
   };
   const deletePotentialCLient = async (id) => {
     console.log(id);
 
-    const res = await axios.get(`${API_URL}potential_client/delete/${id}`);
-    console.log(res);
-    window.location.href = "/admin/potential_clients";
+    // const res = await axios.get(`${API_URL}potential_client/delete/${id}`);
+    // console.log(res);
+    // window.location.href = "/admin/potential_clients";
   };
 
   return isLoading ? (
@@ -51,8 +54,8 @@ export default function AdminView() {
         <h1>לקוחות פוטנציאלים</h1>
 
         {items.map((potential_client) => (
-          <div>
-            <div className="delete-product-confirm" id="confirm-delete">
+          <div key={potential_client._id}>
+            {/* <div className="delete-product-confirm" id="confirm-delete">
               הלקוח הולך להמחק סופית, האם אתם בטוחים?
               <button
                 onClick={(e) => {
@@ -62,12 +65,12 @@ export default function AdminView() {
                 אישור
               </button>
               <button onClick={deleteCancel}>ביטול</button>
-            </div>
+            </div> */}
             <div className="card" key={potential_client._id}>
               <button
                 className="delete-product-button"
                 style={{ left: 20, fontSize: "1.5rem" }}
-                onClick={handleDeleteProduct}
+                onClick={(e) => handleDeleteProduct(potential_client._id)}
               >
                 <i className="fas fa-trash"></i>
               </button>
