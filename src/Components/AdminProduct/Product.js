@@ -25,7 +25,7 @@ const Product = ({ product }) => {
 
     const res = await axios.get(`${API_URL}product/delete/${productDeleteId}`);
     console.log(res);
-    window.location.href = "http://127.0.0.1:3000/admin";
+    window.location.href = "/admin";
   };
 
   return (

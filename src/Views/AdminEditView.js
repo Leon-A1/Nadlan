@@ -212,7 +212,7 @@ export default function AdminEditView() {
           name="product_description"
           onChange={productDescriptionOnChange}
         />
-        <label htmlFor="product_price">Product price</label>
+        <label htmlFor="product_price">מחיר</label>
         <input
           type="text"
           defaultValue={productPrice}
