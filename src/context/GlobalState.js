@@ -4,11 +4,11 @@ import AppReducer from "./AppReducer";
 // initial state
 const initialState = {
   // #### PRODUCTION #####
-  // API_URL: "https://nadlan-server.herokuapp.com/api/",
-  // FILE_STORAGE_URL: "https://nadlan-server.herokuapp.com/file",
+  API_URL: "https://nadlan-server.herokuapp.com/api/",
+  FILE_STORAGE_URL: "https://nadlan-server.herokuapp.com/file/",
   // #### DEVELOPMENT #####
-  API_URL: "http://localhost:5000/api/",
-  FILE_STORAGE_URL: "http://localhost:5000/file/",
+  // API_URL: "http://localhost:5000/api/",
+  // FILE_STORAGE_URL: "http://localhost:5000/file/",
 };
 export const GlobalContext = createContext(initialState);
 
