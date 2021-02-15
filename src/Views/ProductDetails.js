@@ -29,6 +29,7 @@ export default function ProductDetails() {
       setProductMainImageLink(FILE_STORAGE_URL + result.data.product_image1);
       setProductImageLink2(FILE_STORAGE_URL + result.data.product_image2);
       setProductImageLink3(FILE_STORAGE_URL + result.data.product_image3);
+      console.log(productImageLink2);
     };
 
     fetchItem();
