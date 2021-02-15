@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../Assets/css/views/product-details.css";
 import NavBar from "../Components/NavBar/NavBar";
 import Footer from "../Components/Footer/Footer";
 
-export default function ProductDetails() {
-  let { productid } = useParams();
+import { GlobalContext } from "../context/GlobalState";
 
-  const imageHostingUrl = "https://nadlan-server.herokuapp.com/file/";
+export default function ProductDetails() {
+  const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
+
+  let { productid } = useParams();
 
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
@@ -19,16 +21,14 @@ export default function ProductDetails() {
 
   useEffect(() => {
     const fetchItem = async () => {
-      const result = await axios(
-        `https://nadlan-server.herokuapp.com/api/get_product/${productid}`
-      );
+      const result = await axios(`${API_URL}get_product/${productid}`);
       console.log(result.data);
       setProductName(result.data.product_name);
       setProductDescription(result.data.product_description);
       setProductPrice(result.data.product_price);
-      setProductMainImageLink(imageHostingUrl + result.data.product_image1);
-      setProductImageLink2(imageHostingUrl + result.data.product_image2);
-      setProductImageLink3(imageHostingUrl + result.data.product_image3);
+      setProductMainImageLink(FILE_STORAGE_URL + result.data.product_image1);
+      setProductImageLink2(FILE_STORAGE_URL + result.data.product_image2);
+      setProductImageLink3(FILE_STORAGE_URL + result.data.product_image3);
     };
 
     fetchItem();

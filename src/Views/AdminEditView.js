@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../Assets/css/views/admin-view.css";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 
+import { GlobalContext } from "../context/GlobalState";
+
 // TIMER Function
 // setTimeout(() => console.log("file2:", file2), 2000);
 
 export default function AdminEditView() {
+  const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
   let { productid } = useParams();
 
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productPrice, setProductPrice] = useState("");
-  const imageHostingUrl = "https://nadlan-server.herokuapp.com/file/";
 
   // eslint-disable-next-line
   const [file, setFile] = useState("");
@@ -30,9 +32,7 @@ export default function AdminEditView() {
 
   useEffect(() => {
     const fetchItem = async () => {
-      const result = await axios(
-        `https://nadlan-server.herokuapp.com/api/get_product/${productid}`
-      );
+      const result = await axios(`${API_URL}get_product/${productid}`);
       // console.log(result.data);
       setProductName(result.data.product_name);
       setProductDescription(result.data.product_description);
@@ -43,7 +43,7 @@ export default function AdminEditView() {
     };
 
     fetchItem();
-  }, [productid]);
+  }, [productid, API_URL]);
 
   // Instant image upload to backend
   const onChangeImageFileUpload = async (e) => {
@@ -60,15 +60,11 @@ export default function AdminEditView() {
     let formData = new FormData();
     formData.append("product_image", file);
     try {
-      let res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/create_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      let res = await axios.post(`${API_URL}create_image`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setFileSourceLink(res.data.message);
       console.log(res);
     } catch (err) {
@@ -96,15 +92,11 @@ export default function AdminEditView() {
 
       formData.append("product_image", newFile);
 
-      let res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/create_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      let res = await axios.post(`${API_URL}create_image`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setFileSourceLink2(res.data.message);
       console.log(res);
     } catch (err) {
@@ -131,15 +123,11 @@ export default function AdminEditView() {
       let formData = new FormData();
       formData.append("product_image", newFile);
 
-      let res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/create_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      let res = await axios.post(`${API_URL}create_image`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setFileSourceLink3(res.data.message);
       console.log(res);
     } catch (err) {
@@ -177,15 +165,11 @@ export default function AdminEditView() {
     formData.append("product_image3", fileSourceLink3);
 
     try {
-      const res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/update_product",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const res = await axios.post(`${API_URL}update_product`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(res);
       setTimeout(
         () => (window.location.href = "http://127.0.0.1:3000/admin"),
@@ -251,7 +235,7 @@ export default function AdminEditView() {
           onChange={onChangeImageFileUpload}
         />
         <img
-          src={imageHostingUrl + fileSourceLink}
+          src={FILE_STORAGE_URL + fileSourceLink}
           alt=""
           style={{ maxWidth: 150 }}
         ></img>
@@ -268,7 +252,7 @@ export default function AdminEditView() {
           onChange={onChangeImage2FileUpload}
         />
         <img
-          src={imageHostingUrl + fileSourceLink2}
+          src={FILE_STORAGE_URL + fileSourceLink2}
           alt=""
           style={{ maxWidth: 150 }}
         ></img>
@@ -285,7 +269,7 @@ export default function AdminEditView() {
           onChange={onChangeImage3FileUpload}
         />
         <img
-          src={imageHostingUrl + fileSourceLink3}
+          src={FILE_STORAGE_URL + fileSourceLink3}
           alt=""
           style={{ maxWidth: 150 }}
         ></img>

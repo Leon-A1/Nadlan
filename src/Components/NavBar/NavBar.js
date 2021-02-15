@@ -47,7 +47,7 @@ export default function navbar() {
         </span>
         <ul id="top-menu">
           <li>
-            <a href="/">צור קשר</a>
+            <Link to="/contact">צור קשר</Link>
           </li>
 
           <Link to="/about">פרופיל חברה</Link>
@@ -62,10 +62,10 @@ export default function navbar() {
             <a href="/">עמוד הבית</a>
           </li>
           <li id="profile-small-nav-item">
-            <a href="/">פרופיל חברה</a>
+            <Link to="/about">פרופיל חברה</Link>
           </li>
           <li id="contact-small-nav-item">
-            <a href="/">צור קשר</a>
+            <Link to="/contact">צור קשר</Link>
           </li>
         </ul>
 

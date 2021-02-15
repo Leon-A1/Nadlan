@@ -2,7 +2,7 @@ import React from "react";
 import "./footer.css";
 // import facebook_logo from "../Assets/img/facebook_sad.png";
 // import instagram_logo from "../Assets/img/instagram_sad.png";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -23,10 +23,10 @@ export default function Footer() {
 
             <ul>
               <li>
-                <NavLink to="/about">צור קשר</NavLink>
+                <Link to="/contact">צור קשר</Link>
               </li>
               <li>
-                <NavLink to="/about">פרופיל חברה</NavLink>
+                <Link to="/about">פרופיל חברה</Link>
               </li>
               <li>
                 <a href="/" exact="true">

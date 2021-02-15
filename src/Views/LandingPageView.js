@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../Components/NavBar/NavBar";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -8,22 +8,24 @@ import PageHeader from "../Components/PageHeader/PageHeader";
 import PageFooter from "../Components/Footer/Footer";
 import Spinner from "../Components/MainLandingSpinner/Spinner";
 
+import { GlobalContext } from "../context/GlobalState";
+
 export default function LandingPageView() {
+  const { API_URL } = useContext(GlobalContext);
+
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await axios(
-        `https://nadlan-server.herokuapp.com/api/products${query}`
-      );
+      const result = await axios(`${API_URL}products${query}`);
       setItems(result.data);
       setIsLoading(false);
     };
 
     fetchItems();
-  }, [query]);
+  }, [query, API_URL]);
   return (
     <div className="App">
       <Spinner />

@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import "../Assets/css/views/admin-view.css";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
+
+import { GlobalContext } from "../context/GlobalState";
 
 // TIMER Function
 // setTimeout(() => console.log("file2:", file2), 2000);
 
 export default function AdminCreateView() {
-  const ApiFileURL = "https://nadlan-server.herokuapp.com/file/";
+  const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
+
   // eslint-disable-next-line
   const [file, setFile] = useState("");
   const [file2, setFile2] = useState("");
@@ -38,15 +41,11 @@ export default function AdminCreateView() {
     let formData = new FormData();
     formData.append("product_image", file);
     try {
-      let res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/create_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      let res = await axios.post(`${API_URL}create_image`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setFileSourceLink(res.data.message);
       console.log(res);
     } catch (err) {
@@ -74,15 +73,11 @@ export default function AdminCreateView() {
 
       formData.append("product_image", newFile);
 
-      let res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/create_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      let res = await axios.post(`${API_URL}create_image`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setFileSourceLink2(res.data.message);
       console.log(res);
     } catch (err) {
@@ -109,15 +104,11 @@ export default function AdminCreateView() {
       let formData = new FormData();
       formData.append("product_image", newFile);
 
-      let res = await axios.post(
-        "https://nadlan-server.herokuapp.com/api/create_image",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      let res = await axios.post(`${API_URL}create_image`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setFileSourceLink3(res.data.message);
       console.log(res);
     } catch (err) {
@@ -156,15 +147,11 @@ export default function AdminCreateView() {
 
     try {
       const res = await axios
-        .post(
-          "https://nadlan-server.herokuapp.com/api/create_product",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
+        .post(`${API_URL}create_product`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
         .then(setMessage("File Uploaded"))
         .then((window.location.href = "http://127.0.0.1:3000/admin"));
 
@@ -222,7 +209,7 @@ export default function AdminCreateView() {
           onChange={onChangeImageFileUpload}
         />
         <img
-          src={ApiFileURL + fileSourceLink}
+          src={FILE_STORAGE_URL + fileSourceLink}
           alt=""
           style={{ maxWidth: 150 }}
         ></img>
@@ -239,7 +226,7 @@ export default function AdminCreateView() {
           onChange={onChangeImage2FileUpload}
         />
         <img
-          src={ApiFileURL + fileSourceLink2}
+          src={FILE_STORAGE_URL + fileSourceLink2}
           alt=""
           style={{ maxWidth: 150 }}
         ></img>
@@ -256,7 +243,7 @@ export default function AdminCreateView() {
           onChange={onChangeImage3FileUpload}
         />
         <img
-          src={ApiFileURL + fileSourceLink3}
+          src={FILE_STORAGE_URL + fileSourceLink3}
           alt=""
           style={{ maxWidth: 150 }}
         ></img>

@@ -1,0 +1,71 @@
+.contact-form-container {
+  padding: 20px;
+  text-align: right;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-form-container a {
+  text-decoration: none;
+  color: var(--Black);
+}
+
+.contact-form-container a:hover {
+  color: var(--Red);
+}
+
+.contact-form-div {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-left: auto;
+  text-align: right;
+  color: var(--Red);
+  padding: 50px;
+  border: solid var(--Red) 1px;
+  border-radius: 5px;
+}
+.contact-form-div a {
+  text-decoration: none;
+}
+.contact-form-div img {
+  max-width: 100px;
+}
+.contact-form-div span {
+  padding: 30px 0 0 0;
+}
+.contact-form-div input {
+  padding: 10px;
+  color: var(--Black);
+  border: solid var(--Red) 1px;
+  border-radius: 5px;
+  text-align: right;
+  margin-top: 1px;
+}
+.contact-form-div input:focus {
+  border: solid var(--Light-Red) 1px;
+
+  outline: none;
+}
+.contact-form-div input::placeholder {
+  color: rgba(182, 182, 182, 0.3);
+}
+.contact-form-div button {
+  padding: 10px;
+  margin: 20px 0 0 0;
+  color: var(--Light-Red);
+  background-color: var(--White);
+  border: solid var(--Red) 1px;
+  border-radius: 5px;
+  transition: 600ms;
+  font-size: 110%;
+  cursor: pointer;
+  font-weight: 600;
+}
+.contact-form-div button:hover {
+  color: var(--White);
+  border: solid var(--Light-Red) 1px;
+  background-color: var(--Light-Red);
+
+  transition: 600ms;
+}
