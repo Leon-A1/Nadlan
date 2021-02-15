@@ -40,9 +40,9 @@ Variables
 }
 .sidebar-toggle {
   position: fixed;
-  top: 0.9rem;
-  left: 2rem;
-  font-size: 1rem;
+  top: 16px;
+  left: 25px;
+  font-size: 1.25rem;
   background: transparent;
   border-color: transparent;
   /* color: var(--clr-primary-5); */
