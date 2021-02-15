@@ -4,9 +4,9 @@ import "./page-loader.css";
 const Spinner = () => {
   return (
     <>
-      <div id="main-spinner" class="loader-wrapper">
-        <span class="loader">
-          <span class="loader-inner"></span>
+      <div id="main-spinner" className="loader-wrapper">
+        <span className="loader">
+          <span className="loader-inner"></span>
         </span>
       </div>
     </>
