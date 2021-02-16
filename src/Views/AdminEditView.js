@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../Assets/css/views/admin-view.css";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 
@@ -16,6 +16,7 @@ export default function AdminEditView() {
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productPrice, setProductPrice] = useState("");
+  const [deleteLink, setDeleteLink] = useState("");
 
   // eslint-disable-next-line
   const [file, setFile] = useState("");
@@ -40,6 +41,7 @@ export default function AdminEditView() {
       setFileSourceLink(result.data.product_image1);
       setFileSourceLink2(result.data.product_image2);
       setFileSourceLink3(result.data.product_image3);
+      setDeleteLink(`../delete/${productid}`);
     };
 
     fetchItem();
@@ -180,14 +182,7 @@ export default function AdminEditView() {
       }
     }
   };
-  const deleteProduct = async (e) => {
-    e.preventDefault();
-    console.log(productid);
-    console.log("DELETING");
-    const res = await axios.get(`${API_URL}product/delete/${productid}`);
-    console.log(res);
-    window.location.href = "/admin";
-  };
+
   return (
     <div className="admin-view-container">
       <Sidebar />
@@ -282,15 +277,16 @@ export default function AdminEditView() {
         <br></br>
         <br></br>
         <button type="submit">שמור ועדכן נכס</button>
-        <button
-          style={{
-            marginTop: 30,
-            opacity: 0.8,
-          }}
-          onClick={deleteProduct}
-        >
-          מחק נכס לצמיתות <i className="fas fa-trash"></i>
-        </button>
+        <Link to={deleteLink}>
+          <button
+            style={{
+              marginTop: 30,
+              opacity: 0.8,
+            }}
+          >
+            מחק נכס לצמיתות <i className="fas fa-trash"></i>
+          </button>
+        </Link>
         {/* LOADER */}
       </form>
     </div>

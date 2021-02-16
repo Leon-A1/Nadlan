@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import "../Assets/css/views/potential-clients-view.css";
 import axios from "axios";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
@@ -10,6 +11,7 @@ export default function AdminView() {
   const { API_URL } = useContext(GlobalContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [deleteLink, setDeleteLink] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -20,14 +22,6 @@ export default function AdminView() {
 
     fetchItems();
   }, [API_URL]);
-
-  const handleDeleteProduct = async (id) => {
-    const res = await axios.get(`${API_URL}potential_client/delete/${id}`);
-    console.log(res);
-    window.location.href = "/admin/potential_clients";
-
-    console.log(id);
-  };
 
   return isLoading ? (
     <Spinner />
@@ -40,25 +34,17 @@ export default function AdminView() {
 
         {items.map((potential_client) => (
           <div key={potential_client._id}>
-            {/* <div className="delete-product-confirm" id="confirm-delete">
-              הלקוח הולך להמחק סופית, האם אתם בטוחים?
-              <button
-                onClick={(e) => {
-                  deletePotentialCLient(potential_client._id);
-                }}
-              >
-                אישור
-              </button>
-              <button onClick={deleteCancel}>ביטול</button>
-            </div> */}
             <div className="card" key={potential_client._id}>
-              <button
-                className="delete-product-button"
-                style={{ left: 20, fontSize: "1.5rem" }}
-                onClick={(e) => handleDeleteProduct(potential_client._id)}
+              <Link
+                to={`/admin/potential_clients/delete/${potential_client._id}`}
               >
-                <i className="fas fa-trash"></i>
-              </button>
+                <button
+                  className="delete-product-button"
+                  style={{ left: 20, fontSize: "1.5rem" }}
+                >
+                  <i className="fas fa-trash"></i>
+                </button>
+              </Link>
               <p className="client_name">{potential_client.client_name}</p>
               <p className="client_email">
                 <a href={`mailto:${potential_client.client_email}`}>
