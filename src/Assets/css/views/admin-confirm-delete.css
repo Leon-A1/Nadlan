@@ -1,0 +1,51 @@
+.delete-product-confirm {
+  position: fixed;
+  top: 250px;
+  left: 0;
+  right: 1px;
+  height: 300px;
+  z-index: 1000;
+  background-color: var(--White);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  padding: 20px;
+  border: 1px solid var(--Red);
+  filter: drop-shadow(1px 1px 15px black);
+}
+.delete-product-confirm button {
+  padding: 15px;
+  width: 100%;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: var(--Black);
+  background-color: var(--White);
+  transition: 300ms;
+  cursor: pointer;
+}
+.delete-product-confirm button:hover {
+  color: var(--White);
+  background-color: var(--Black);
+  transition: 300ms;
+}
+
+@media (min-width: 600px) {
+  .delete-product-confirm {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+
+    /* bottom: 50vh; */
+    /* right: 50%; */
+    height: 300px;
+    width: 500px;
+  }
+}

@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import "../Assets/css/views/admin-view.css";
+import "../Assets/css/views/admin-confirm-delete.css";
+
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 
 import { GlobalContext } from "../context/GlobalState";
