@@ -73,9 +73,11 @@
   background: none;
   border: none;
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 20px;
   z-index: 100;
   cursor: pointer;
   font-size: 200px;
+  font-size: 1.5rem;
+  filter: drop-shadow(0.2px 0.2px 0.2px var(--Black));
 }
