@@ -2,6 +2,7 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
+  /* filter: drop-shadow(1px 1px 1px black); */
   /* align-items: center; */
 }
 .potential-clients-list h1 {
@@ -13,41 +14,51 @@
 }
 .potential-clients-list .card {
   margin: 20px;
+  padding-right: 20px;
   background-color: var(--Light-Grey);
   width: 100%;
+  filter: drop-shadow(3px 1px 1px var(--Black));
+  cursor: auto;
 }
 .potential-clients-list .card .client_name {
   text-align: right;
   width: 100%;
   font-size: 1.5rem;
-  padding: 0.5rem;
+  padding: 10px;
+  color: var(--White);
+  font-weight: 600;
+  filter: drop-shadow(3px 1px 1px var(--Black));
 }
 .potential-clients-list .card .client_email {
   width: 100%;
   text-align: right;
   font-size: 1.5rem;
-  padding: 0.5rem;
-  color: var(--Black);
+  padding: 10px;
 }
 .potential-clients-list .card .client_email a {
-  color: var(--Black);
+  color: var(--White);
+  font-weight: 600;
+  filter: drop-shadow(3px 1px 1px var(--Black));
 }
 .potential-clients-list .card .client_email a i {
   margin-left: 5px;
 }
 .potential-clients-list .card .client_email a:hover {
   color: var(--Red);
-  font-weight: 900;
+  /* font-weight: 900; */
+  filter: drop-shadow(1px 1px 1px var(--Black));
 }
 
 .potential-clients-list .card .client_number {
   width: 100%;
   text-align: right;
   font-size: 1.5rem;
-  padding: 0.5rem;
+  padding: 10px;
 }
 .potential-clients-list .card .client_number a {
-  color: var(--Black);
+  color: var(--White);
+  font-weight: 600;
+  filter: drop-shadow(3px 1px 1px var(--Black));
 }
 .potential-clients-list .card .client_number a i {
   margin-left: 5px;
@@ -55,4 +66,16 @@
 .potential-clients-list .card .client_number a:hover {
   color: var(--Red);
   font-weight: 900;
+  filter: drop-shadow(1px 1px 1px var(--Black));
+}
+.delete-client-button {
+  color: var(--Red);
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 100;
+  cursor: pointer;
+  font-size: 200px;
 }

@@ -38,7 +38,7 @@ export default function AdminView() {
                 to={`/admin/potential_clients/delete/${potential_client._id}`}
               >
                 <button
-                  className="delete-product-button"
+                  className="delete-client-button"
                   style={{ left: 20, fontSize: "1.5rem" }}
                 >
                   <i className="fas fa-trash"></i>
