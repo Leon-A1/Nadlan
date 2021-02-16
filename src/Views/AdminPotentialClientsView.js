@@ -11,7 +11,6 @@ export default function AdminView() {
   const { API_URL } = useContext(GlobalContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [deleteLink, setDeleteLink] = useState(true);
 
   useEffect(() => {
     const fetchItems = async () => {
