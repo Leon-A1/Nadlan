@@ -4,7 +4,11 @@ import "./index.css";
 import logo from "./logo.png";
 import { FaTimes, FaBars } from "react-icons/fa";
 
+// import { GlobalContext } from "../../context/GlobalState";
+
 const Sidebar = () => {
+  // const { SECRET_ADMIN_KEY, LOGGED_IN } = useContext(GlobalContext);
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const openSidebar = () => {
@@ -38,9 +42,11 @@ const Sidebar = () => {
           <li>
             <a href="/admin/potential_clients">לקוחות פוטנציאלים</a>
           </li>
-          {/* <li>
-            <a href="/#">link 3</a>
-          </li> */}
+          <li>
+            <button onClick={(e) => console.log(e)} style={{ padding: 10 }}>
+              Log in
+            </button>
+          </li>
         </ul>
         {/* <ul className="social-icons">
           <li>

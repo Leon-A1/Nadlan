@@ -7,6 +7,9 @@ const initialState = {
   API_URL: "https://nadlan-server.herokuapp.com/api/",
   FILE_STORAGE_URL: "https://nadlan-server.herokuapp.com/file/",
 
+  // SECRET_ADMIN_KEY: "secret",
+  // LOGGED_IN: false,
+
   // #### DEVELOPMENT #####
   // API_URL: "http://localhost:5000/api/",
   // FILE_STORAGE_URL: "http://localhost:5000/file/",

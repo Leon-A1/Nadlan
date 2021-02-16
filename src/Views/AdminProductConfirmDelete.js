@@ -15,6 +15,7 @@ export default function AdminEditView() {
   const deleteProduct = async (e) => {
     e.preventDefault();
     const res = await axios.get(`${API_URL}product/delete/${productid}`);
+    console.log(res);
     window.location.href = "/admin";
   };
 
