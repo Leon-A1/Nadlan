@@ -11,10 +11,12 @@ import AdminProductConfirmDeleteView from "./Views/AdminProductConfirmDelete";
 import AdminClientConfirmDeleteView from "./Views/AdminClientConfirmDelete";
 import AdminPotentialClientsView from "./Views/AdminPotentialClientsView";
 
+import LoginView from "./auth/LoginView";
+import ProtectedRoute from "./auth/ProtectedRoute";
+
 import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
-  // let productId = "";
   return (
     <GlobalProvider>
       <Router>
@@ -26,24 +28,31 @@ function App() {
             <ProductDetails />
           </Route>
 
-          <Route exact path="/admin" component={AdminView}></Route>
-          <Route
+          <ProtectedRoute
+            exact
+            path="/admin"
+            component={AdminView}
+          ></ProtectedRoute>
+          <ProtectedRoute
             exact
             path="/admin/potential_clients"
             component={AdminPotentialClientsView}
-          ></Route>
-          <Route
+          ></ProtectedRoute>
+          <ProtectedRoute
             path="/admin/create-product"
             component={AdminCreateView}
-          ></Route>
-          <Route path="/admin/product/update/:productid">
+          ></ProtectedRoute>
+          <ProtectedRoute path="/admin/product/update/:productid">
             <AdminUpdateProductView />
-          </Route>
-          <Route path="/admin/product/delete/:productid">
+          </ProtectedRoute>
+          <ProtectedRoute path="/admin/product/delete/:productid">
             <AdminProductConfirmDeleteView />
-          </Route>
-          <Route path="/admin/potential_clients/delete/:productid">
+          </ProtectedRoute>
+          <ProtectedRoute path="/admin/potential_clients/delete/:productid">
             <AdminClientConfirmDeleteView />
+          </ProtectedRoute>
+          <Route path="/login">
+            <LoginView />
           </Route>
         </Switch>
       </Router>

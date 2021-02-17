@@ -3,7 +3,7 @@ const AppReducer = (state, action) => {
     case "LOGIN":
       return {
         ...state,
-        LOGGED_IN: true,
+        IsAuth: true,
       };
     case "LOGOUT":
       return {
