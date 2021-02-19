@@ -4,6 +4,7 @@
   align-items: center;
   width: 100%;
   padding-bottom: 50px;
+  min-height: 90vh;
   /* color: red; */
 }
 .about-page-header {

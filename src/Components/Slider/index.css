@@ -10,7 +10,7 @@ Slider
   height: 350px;
   text-align: center;
   position: relative;
-  margin-bottom: 72px;
+  margin-bottom: 70.5px;
   background-color: var(--Black);
   overflow: hidden;
 }
@@ -108,4 +108,7 @@ article.nextSlide {
     font-size: 2rem;
     margin: 10px;
   }
+}
+.section-center {
+  margin-bottom: 70.1px;
 }

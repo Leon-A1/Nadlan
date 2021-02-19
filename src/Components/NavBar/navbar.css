@@ -9,7 +9,7 @@
 #hamburger-button-id {
   position: fixed;
   top: 20px;
-  right: 35px;
+  right: 15px;
   z-index: 15;
   filter: drop-shadow(1px 1px 1px #222222);
 }
