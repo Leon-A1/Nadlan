@@ -35,10 +35,10 @@ export default function LandingPageView() {
   return (
     <div className="App">
       <Navbar />
+      <Spinner />
       <PageHeader />
       <Search getQuery={(q) => setQuery(q)} />
       <ProductGrid isLoading={isLoading} items={items} />
-      <Spinner />
       <PageFooter />
     </div>
   );

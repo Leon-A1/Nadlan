@@ -10,7 +10,7 @@ Slider
   height: 350px;
   text-align: center;
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 72px;
   background-color: var(--Black);
   overflow: hidden;
 }

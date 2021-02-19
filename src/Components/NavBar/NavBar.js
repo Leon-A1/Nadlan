@@ -32,9 +32,16 @@ export default function navbar() {
   }
 
   return (
-    <div style={{ zIndex: 100, position: "fixed" }}>
+    <div
+      style={{
+        zIndex: 100,
+        position: "fixed",
+      }}
+    >
       <nav className="navbar">
-        <img id="navBarLogo" className="navBarLogo" src={logo} alt="logo" />
+        <Link to="/">
+          <img id="navBarLogo" className="navBarLogo" src={logo} alt="logo" />
+        </Link>
 
         <span id="hamburger-button-id">
           <button className="open-slide" onClick={openSlideMenu}>
@@ -52,14 +59,14 @@ export default function navbar() {
 
           <Link to="/about">פרופיל חברה</Link>
           <li>
-            <a href="/">עמוד הבית</a>
+            <Link to="/">עמוד הבית</Link>
           </li>
         </ul>
       </nav>
       <div id="side-menu" className="side-nav">
         <ul>
           <li id="home-small-nav-item">
-            <a href="/">עמוד הבית</a>
+            <Link to="/">עמוד הבית</Link>
           </li>
           <li id="profile-small-nav-item">
             <Link to="/about">פרופיל חברה</Link>

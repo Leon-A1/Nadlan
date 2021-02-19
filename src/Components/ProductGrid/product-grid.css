@@ -3,6 +3,7 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   padding: 1rem;
+  min-height: 35vh;
 }
 .card {
   cursor: pointer;
