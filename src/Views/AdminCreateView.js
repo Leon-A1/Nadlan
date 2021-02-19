@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import "../Assets/css/views/admin-view.css";
 import "../Assets/css/views/admin-create-product-view.css";
@@ -164,6 +164,10 @@ export default function AdminCreateView() {
       }
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="admin-view-container">

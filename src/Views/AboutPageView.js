@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Assets/css/views/about-page-view.css";
 import headerBackgroundImg from "../Assets/img/page-header-image.jpg";
 import Footer from "../Components/Footer/Footer";
 import NavBar from "../Components/NavBar/NavBar";
 
 export default function CompanyProfile() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <NavBar />

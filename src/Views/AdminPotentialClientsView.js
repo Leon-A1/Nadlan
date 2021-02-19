@@ -13,6 +13,10 @@ export default function AdminView() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`${API_URL}potential_clients`);
       setItems(result.data);

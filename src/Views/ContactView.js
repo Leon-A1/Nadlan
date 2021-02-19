@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Assets/css/views/contact-view.css";
 import headerBackgroundImg from "../Assets/img/page-header-image.jpg";
 import Footer from "../Components/Footer/Footer";
@@ -6,6 +6,10 @@ import NavBar from "../Components/NavBar/NavBar";
 import GetInTouchForm from "../Components/GetInTouchForm/GetInTouchForm";
 
 export default function ContactView() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <NavBar />

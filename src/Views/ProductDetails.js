@@ -23,6 +23,10 @@ export default function ProductDetails() {
   const [productImageLink3, setProductImageLink3] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const fetchItem = async () => {
       setIsLoading(true);
 

@@ -19,6 +19,10 @@ export default function LandingPageView() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const fetchItems = async () => {
       const result = await axios.get(`${API_URL}products${query}`);
       setItems(result.data);

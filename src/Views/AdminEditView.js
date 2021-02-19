@@ -30,6 +30,10 @@ export default function AdminEditView() {
   const [fileSourceLink3, setFileSourceLink3] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const fetchItem = async () => {
       const result = await axios(`${API_URL}get_product/${productid}`);
       // console.log(result.data);
