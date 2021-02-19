@@ -4,7 +4,6 @@ import Amap from "./ashdod-map.png";
 
 import "./leave-contact.css";
 
-// import { GlobalContext } from "../ ../context/GlobalState";
 import { GlobalContext } from "../../context/GlobalState";
 
 export default function GetInContact() {

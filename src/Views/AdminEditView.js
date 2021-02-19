@@ -36,7 +36,6 @@ export default function AdminEditView() {
   useEffect(() => {
     const fetchItem = async () => {
       const result = await axios(`${API_URL}get_product/${productid}`);
-      // console.log(result.data);
       setProductName(result.data.product_name);
       setProductDescription(result.data.product_description);
       setProductPrice(result.data.product_price);

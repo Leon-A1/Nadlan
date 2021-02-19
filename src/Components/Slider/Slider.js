@@ -6,11 +6,6 @@ function Slider() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = React.useState(0);
 
-  function hideSpinner() {
-    document.getElementById("main-spinner").style.opacity = "0";
-    document.getElementById("main-spinner").style.display = "none";
-  }
-
   useEffect(() => {
     console.log(setPeople);
     const lastIndex = people.length - 1;
@@ -49,12 +44,7 @@ function Slider() {
 
         return (
           <article className={position} key={id}>
-            <img
-              onLoad={hideSpinner}
-              src={image}
-              alt={name}
-              className="person-img"
-            />
+            <img src={image} alt={name} className="person-img" />
 
             <p className="title">{title}</p>
             <p className="text">{quote}</p>

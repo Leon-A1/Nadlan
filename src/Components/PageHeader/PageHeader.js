@@ -1,10 +1,17 @@
 import React from "react";
 import "./page-header.css";
-import Slider from "../Slider/App";
+import Slider from "../Slider/Slider";
 
 export const PageHeader = () => {
+  function hideSpinner() {
+    document.getElementById("main-spinner").style.opacity = "0";
+    document.getElementById("main-spinner").style.display = "none";
+  }
   return (
-    <div style={{ backgroundColor: "var(--Black)" }}>
+    <div
+      onLoadCapture={hideSpinner}
+      style={{ backgroundColor: "var(--Black)" }}
+    >
       <Slider></Slider>
     </div>
   );

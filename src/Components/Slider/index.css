@@ -55,8 +55,6 @@ article .text {
   font-size: 2rem;
   transform: translate(-50%, 0);
   font-weight: 600;
-
-  /* overflow: hidden; */
 }
 
 .prev,

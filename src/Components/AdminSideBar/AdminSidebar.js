@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import "./index.css";
+import "./admin-sidebar.css";
 import { Link } from "react-router-dom";
-// import logo from "../Assets/img/logo.png";
 import logo from "./logo.png";
 import { FaTimes, FaBars } from "react-icons/fa";
 
-// import { GlobalContext } from "../../context/GlobalState";
-
 const Sidebar = () => {
-  // const { SECRET_ADMIN_KEY, LOGGED_IN } = useContext(GlobalContext);
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const openSidebar = () => {
