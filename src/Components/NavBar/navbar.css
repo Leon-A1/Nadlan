@@ -84,7 +84,6 @@
 #top-menu {
   font-family: Assistant, sans-serif;
   font-size: 1.5rem;
-  width: 100%;
   list-style: none;
   display: flex;
   justify-content: center;
@@ -94,6 +93,7 @@
   z-index: 10;
   height: 70px;
   font-weight: 500;
+  width: 100%;
 }
 #top-menu a {
   text-decoration: none;

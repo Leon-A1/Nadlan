@@ -12,6 +12,7 @@ Slider
   position: relative;
   margin-bottom: 70px;
   background-color: var(--Black);
+  overflow: hidden;
 }
 
 article {
@@ -28,6 +29,8 @@ article .person-img {
   height: 100%;
   opacity: 0.5;
   background-color: Black;
+  margin: none;
+  padding: none;
 }
 
 article .title {
