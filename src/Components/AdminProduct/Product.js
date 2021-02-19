@@ -12,25 +12,26 @@ const Product = ({ product }) => {
 
   return (
     <>
-      <div className="card">
-        <img src={imageLink1} alt="" />
-        <h1>{product.product_name}</h1>
+      <Link
+        className="edit-product-link"
+        to={`/admin/product/update/${product._id}`}
+      >
+        <div className="card">
+          <img src={imageLink1} alt="" />
+          <h1>{product.product_name}</h1>
 
-        <p className="description">{product.product_description}</p>
+          <p className="description">{product.product_description}</p>
 
-        <p className="go-to-details">...</p>
-        <p className="go-to-details">מידע נוסף</p>
-        <p className="price">&#8362;{product.product_price}</p>
-        <Link
-          className="edit-product-link"
-          to={`/admin/product/update/${product._id}`}
-        >
+          <p className="go-to-details">...</p>
+          <p className="go-to-details">מידע נוסף</p>
+          <p className="price">&#8362;{product.product_price}</p>
+
           <button className="edit-product-button">
             {" "}
             <i className="fas fa-edit"></i>
           </button>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </>
   );
 };

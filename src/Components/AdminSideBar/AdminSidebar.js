@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 // import logo from "../Assets/img/logo.png";
 import logo from "./logo.png";
 import { FaTimes, FaBars } from "react-icons/fa";
@@ -34,19 +35,14 @@ const Sidebar = () => {
         </div>
         <ul className="links">
           <li>
-            <a href="/admin/create-product">הוספת נכס חדש</a>
+            <Link to="/admin/create-product">הוספת נכס חדש</Link>
           </li>
           <li>
-            <a href="/admin">נכסים קיימים</a>
+            <Link to="/admin">נכסים קיימים</Link>
           </li>
           <li>
-            <a href="/admin/potential_clients">לקוחות פוטנציאלים</a>
+            <Link to="/admin/potential_clients">לקוחות פוטנציאלים</Link>
           </li>
-          {/* <li>
-            <button onClick={(e) => console.log(e)} style={{ padding: 10 }}>
-              Log in
-            </button>
-          </li> */}
         </ul>
         {/* <ul className="social-icons">
           <li>

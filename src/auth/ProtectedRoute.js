@@ -1,11 +1,12 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 
 const ProtectedRoute = ({
   component: Component,
 
   ...rest
 }) => {
+  const history = useHistory();
   return (
     <div>
       <Route
@@ -14,11 +15,7 @@ const ProtectedRoute = ({
           if (localStorage.getItem("nadlan-auth") === "authenticated") {
             return <Component />;
           } else {
-            return (
-              <Redirect
-                to={{ pathname: "/login", state: { from: props.location } }}
-              />
-            );
+            return history.push("/login");
           }
         }}
       ></Route>

@@ -29,11 +29,11 @@ export default function LandingPageView() {
   }, [query, API_URL]);
   return (
     <div className="App">
-      <Spinner />
       <Navbar />
       <PageHeader />
       <Search getQuery={(q) => setQuery(q)} />
       <ProductGrid isLoading={isLoading} items={items} />
+      <Spinner />
       <PageFooter />
     </div>
   );

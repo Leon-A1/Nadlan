@@ -76,7 +76,7 @@
   position: absolute;
   top: 0;
   right: 22px;
-  font-size: 36px;
+  font-size: 3rem;
   margin-left: 50px;
   cursor: pointer;
 }
@@ -99,7 +99,7 @@
   text-decoration: none;
   color: var(--Grey);
   transition: 600ms;
-  padding: 25px;
+  padding: 17px;
   cursor: pointer;
   color: var(--Red);
 }

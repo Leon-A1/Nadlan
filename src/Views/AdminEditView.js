@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import "../Assets/css/views/admin-view.css";
 import Sidebar from "../Components/AdminSideBar/AdminSidebar";
 
 import { GlobalContext } from "../context/GlobalState";
 
-// TIMER Function
-// setTimeout(() => console.log("file2:", file2), 2000);
-
 export default function AdminEditView() {
+  const history = useHistory();
   const { API_URL, FILE_STORAGE_URL } = useContext(GlobalContext);
   let { productid } = useParams();
 
@@ -173,7 +171,7 @@ export default function AdminEditView() {
         },
       });
       console.log(res);
-      setTimeout(() => (window.location.href = "/admin"), 500);
+      setTimeout(() => history.push("/admin"), 500);
     } catch (err) {
       if (err.response.status === 400) {
         setMessage(err.response.data.message);
