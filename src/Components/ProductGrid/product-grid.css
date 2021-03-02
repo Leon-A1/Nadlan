@@ -3,7 +3,7 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
   padding: 1rem;
-  background-color: var(--Light-Grey);
+  background-color: var(--Very-Light-Grey);
 }
 .card {
   cursor: pointer;

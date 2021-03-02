@@ -14,14 +14,17 @@ a {
   --Red: #8d021f;
   --Light-Red: rgba(141, 2, 31, 0.6);
   --Grey: #6d6a75;
+
   --Light-Grey: #bfbdc1;
+  /* --Light-Grey: #d4d4d4; */
+  --Very-Light-Grey: #d4d4d4;
   --Black: #030301;
   --White: #f5f5f5;
 }
 
 html,
 body {
-  background-color: var(--White);
+  background-color: var(--Very-Light-Grey);
   height: 100vh;
   font-family: Assistant, sans-serif;
   font-weight: 400;
