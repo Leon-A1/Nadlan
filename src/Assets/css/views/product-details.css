@@ -33,6 +33,9 @@
   min-width: 180px;
   text-align: center;
 }
+.product-details-call-now {
+  background-color: var(--White);
+}
 .product-details-call-now:hover {
   color: var(--White);
   background-color: var(--Red);
