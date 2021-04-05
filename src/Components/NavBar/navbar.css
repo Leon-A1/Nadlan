@@ -21,14 +21,14 @@
   z-index: 15;
   top: 0;
   right: 0;
-  background-color: var(--White);
+  background-color: white;
   overflow-x: hidden;
   padding-top: 150px;
-  transition: width 700ms;
-  font-size: 110%;
+  transition: all 500ms ease-in-out;
+  font-size: 1.25rem;
   font-family: Assistant, sans-serif;
   overflow-y: hidden;
-  filter: drop-shadow(1px 1px 10px #222222);
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.3));
 }
 
 .side-nav a {
@@ -85,11 +85,12 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: white;
   z-index: 10;
   height: 70px;
   font-weight: 500;
   width: 100%;
+  filter: drop-shadow(1px 1px 15px rgba(0, 0, 0, 0.3));
 }
 #top-menu a {
   text-decoration: none;
@@ -100,9 +101,9 @@
   color: var(--Red);
 }
 #top-menu a:hover {
-  transition: 600ms;
-  text-decoration: none;
-  background-color: var(--White);
+  transition: 300ms;
+  background-color: white;
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.1));
 }
 
 @media (max-width: 900px) {

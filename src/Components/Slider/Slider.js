@@ -48,6 +48,9 @@ function Slider() {
 
             <p className="title">{title}</p>
             <p className="text">{quote}</p>
+            <a href="tel:+972536261201" className="hero-section-call-to-action">
+              <i className="fas fa-headset"> </i> קבלת ייעוץ חינם
+            </a>
           </article>
         );
       })}

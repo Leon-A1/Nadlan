@@ -4,6 +4,7 @@
   gap: 1.5rem;
   padding: 1rem;
   background-color: var(--Very-Light-Grey);
+  min-height: 30vh;
 }
 .card {
   cursor: pointer;
@@ -11,7 +12,7 @@
   height: auto;
   max-height: 500px;
   border: 1px solid var(--Black);
-  filter: drop-shadow(1px 1px 3px black);
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.1));
 }
 
 .card > h1 {
