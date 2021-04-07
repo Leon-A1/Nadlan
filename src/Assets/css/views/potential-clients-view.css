@@ -1,9 +1,8 @@
 .potential-clients-list {
-  padding: 50px;
+  padding: 20px;
+
   display: flex;
   flex-direction: column;
-  /* filter: drop-shadow(1px 1px 1px black); */
-  /* align-items: center; */
 }
 .potential-clients-list h1 {
   color: var(--Red);
@@ -13,21 +12,25 @@
   width: 100%;
 }
 .potential-clients-list .card {
-  margin: 20px;
   padding-right: 20px;
-  background-color: var(--Light-Grey);
+  background-color: white;
   width: 100%;
-  filter: drop-shadow(3px 1px 1px var(--Black));
-  cursor: auto;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.1));
+  transition: 600ms ease;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.potential-clients-list .card:hover {
+  filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.2));
+  transition: 600ms ease;
 }
 .potential-clients-list .card .client_name {
   text-align: right;
   width: 100%;
   font-size: 1.5rem;
   padding: 10px;
-  color: var(--White);
-  font-weight: 600;
-  filter: drop-shadow(3px 1px 1px var(--Black));
+  color: rgba(0, 0, 0, 0.95);
+  font-weight: 500;
 }
 .potential-clients-list .card .client_email {
   width: 100%;
@@ -36,9 +39,8 @@
   padding: 10px;
 }
 .potential-clients-list .card .client_email a {
-  color: var(--White);
-  font-weight: 600;
-  filter: drop-shadow(3px 1px 1px var(--Black));
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 500;
 }
 .potential-clients-list .card .client_email a i {
   margin-left: 5px;
@@ -46,7 +48,6 @@
 .potential-clients-list .card .client_email a:hover {
   color: var(--Red);
   /* font-weight: 900; */
-  filter: drop-shadow(1px 1px 1px var(--Black));
 }
 
 .potential-clients-list .card .client_number {
@@ -56,20 +57,17 @@
   padding: 10px;
 }
 .potential-clients-list .card .client_number a {
-  color: var(--White);
-  font-weight: 600;
-  filter: drop-shadow(3px 1px 1px var(--Black));
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 500;
 }
 .potential-clients-list .card .client_number a i {
   margin-left: 5px;
 }
 .potential-clients-list .card .client_number a:hover {
   color: var(--Red);
-  font-weight: 900;
-  filter: drop-shadow(1px 1px 1px var(--Black));
 }
 .delete-client-button {
-  color: var(--Red);
+  color: rgba(0, 0, 0, 0.5);
   background: none;
   border: none;
   position: absolute;
@@ -78,5 +76,4 @@
   z-index: 100;
   cursor: pointer;
   font-size: 1.5rem;
-  filter: drop-shadow(0.2px 0.2px 0.2px var(--Black));
 }
